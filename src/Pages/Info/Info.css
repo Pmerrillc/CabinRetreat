@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 40px;
+    margin-top: 20vh;
   }
   
   .description-container h1 {
