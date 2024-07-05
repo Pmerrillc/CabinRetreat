@@ -57,23 +57,22 @@ const VerticalImageSlider = () => {
       </div>
     </div>
   );
-
   function getOpacityClass(index) {
     switch (index) {
       case 0:
-        return "opacity-40 w-28 h-16";
+        return "opacity-40 w-16 h-10 sm:w-28 sm:h-16";
       case 1:
-        return "opacity-80 w-60 h-32 ";
+        return "opacity-80 w-28 h-16 sm:w-60 sm:h-32";
       case 2:
-        return "opacity-100 w-[450px] h-[280px]";
+        return "opacity-100 w-60 h-36 sm:w-[300px] sm:h-[180px] md:w-[450px] md:h-[280px]";
       case 3:
-        return "opacity-80 w-60 h-32";
+        return "opacity-80 w-28 h-16 sm:w-60 sm:h-32";
       case 4:
-        return "opacity-40 w-28 h-16";
+        return "opacity-40 w-16 h-10 sm:w-28 sm:h-16";
       default:
         return "";
     }
   }
-};
+}
 
 export default VerticalImageSlider;
