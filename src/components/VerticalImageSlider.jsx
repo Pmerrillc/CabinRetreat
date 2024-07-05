@@ -43,7 +43,7 @@ const VerticalImageSlider = () => {
   };
 
   return (
-    <div className="flex items-center justify-center md:justify-start  w-full">
+    <div className="flex items-center justify-center  w-full h-[150%]">
       <div className="relative flex flex-col items-center h-fit overflow-hidden">
         {carouselArray.map((image, index) => (
           <img
