@@ -1,18 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import HorizontalDivider from '../reusable/Horizontaldivider';
-import {
-  faMagnifyingGlass,
-  faMountainSun,
-  faLocationDot,
-  faSink,
-  faUtensils,
-  faBed,
-  faFire,
-  faMoon,
-  faBell,
-  faTree
-} from "@fortawesome/free-solid-svg-icons"; 
+import HorizontalLine from '../reusable/HorizontalLine';
 
 const DetailsText = () => {
 
@@ -26,12 +13,13 @@ const DetailsText = () => {
     { src: 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720012206/Vector-3_qbqoes.png', text: 'Stone fireplace' },
     { src: 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720012206/Vector_wvsvcw.png', text: 'Sleeps 7' }
   ];
+  
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[90vh] space-y-10">
       <div className="text-3xl font-semibold mb-8 text-center">
         <h1>Nature-Filled Mountain<br />Cabin Retreat</h1>
       </div>
-      <div className="text-md font-normal text-center w-[95%]">
+      <div className="text-md font-medium text-center w-[95%]">
         Relax in the vintage charm and comfort of this river view mountain
         retreat minutes from Pinecreat lake and Dodge Ridge. A family friendly
         vacation location with something for everyone. Enjoy a swing set,
@@ -41,27 +29,64 @@ const DetailsText = () => {
         picturesque private deck. Check out the Space section for a complete
         list of nearby things to do!
       </div>
-      <HorizontalDivider />
-        <div className="container mt-10">
-        <div className="grid grid-cols-2 mb-8">
-          {features.slice(0, 2).map((icon, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <img src={icon.src} alt={`Icon ${index + 1}`} className="w-6 h-6" />
-                <span>{icon.text}</span>
-                {index === 1 && <span className="text-xs text-gray-500">{icon.detail}</span>}
-              </div>
-          ))}
+      <HorizontalLine />
+      <div className="container mt-10 md:ml-20">
+  {/* Mobile view */}
+  <div className="block md:hidden">
+    <div className="flex flex-col space-y-6 mb-6">
+      <div className="flex items-center space-x-2 font-bold">
+        <img src={features[0].src} alt="Mountain experience" className="w-6 h-6" />
+        <span>{features[0].text}</span>
+      </div>
+      <div className="flex flex-col space-y-2">
+        <div className="flex items-center space-x-2 font-bold">
+          <img src={features[1].src} alt="Address" className="w-6 h-6" />
+          <span>{features[1].text}</span>
         </div>
-        <div className="grid grid-cols-3 gap-10">
-          {features.slice(2).map((icon, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <img src={icon.src} alt={`Icon ${index + 3}`} className="w-6 h-6" />
-              <span>{icon.text}</span>
-            </div>
-          ))}
+        <div>
+          <span className="text-xs text-black font-semibold">{features[1].detail}</span>
         </div>
       </div>
+    </div>
+    <div className="grid grid-cols-2 gap-4">
+      {features.slice(2).map((icon, index) => (
+        <div key={index} className="flex items-center space-x-2 font-bold">
+          <img src={icon.src} alt={`Icon ${index + 3}`} className="w-6 h-6" />
+          <span>{icon.text}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Desktop view */}
+  <div className="hidden md:block">
+    <div className="flex flex-row space-x-20 md:space-x-8 mb-6">
+      <div className="flex flex-row space-x-4 items-center w-[40%] font-bold">
+        <img src={features[0].src} alt="Mountain experience" className="w-6 h-6" />
+        <span>{features[0].text}</span>
       </div>
+      <div className="flex flex-col md:flex-row space-y-2">
+        <div className="flex items-center space-x-2 font-bold">
+          <img src={features[1].src} alt="Address" className="w-6 h-6" />
+          <span>{features[1].text}</span>
+        </div>
+        <div className="pl-8 md:w-[65%]">
+          <span className="text-xs text-black font-semibold">{features[1].detail}</span>
+        </div>
+      </div>
+    </div>
+    <div className="grid grid-cols-3 gap-10">
+      {features.slice(2).map((icon, index) => (
+        <div key={index} className="flex items-center space-x-2 font-bold">
+          <img src={icon.src} alt={`Icon ${index + 3}`} className="w-6 h-6" />
+          <span>{icon.text}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+    </div>
   )
 }
 

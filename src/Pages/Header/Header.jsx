@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-16">
+    <header className=" top-0 left-0 w-full bg-white shadow-md z-10 h-16">
       <div className="container mx-auto px-6 py-3 flex  justify-end items-center">
         <nav className="hidden md:flex items-center space-x-10">
           <Link to="section1" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer">

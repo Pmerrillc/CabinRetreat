@@ -141,6 +141,7 @@ const Info = () => {
               ? `url(${imageUrls[4].url1})`
               : 'none',
             backgroundColor: (hoveredBox === 2 || hoveredBox === 3) ? '#FFDEA6' : '#76422C',
+            transition: 'background-image 0.2s ease-in-out, background-color 0.4s ease-in-out',
           }}
         >
           {(hoveredBox !== 2 && hoveredBox !== 3) && <span>On the Property</span>}
@@ -156,6 +157,7 @@ const Info = () => {
               ? `url(${imageUrls[4].url2})`
               : 'none',
             backgroundColor: (hoveredBox === 1 || hoveredBox === 3) ? '#FFDEA6' : '#76422C',
+            transition: 'background-image 0.2s ease-in-out, background-color 0.4s ease-in-out',
           }}
         >
           {(hoveredBox !== 1 && hoveredBox !== 3) && <span>Nearby Attractions</span>}
@@ -171,6 +173,7 @@ const Info = () => {
               ? `url(${imageUrls[4].url3})`
               : 'none',
             backgroundColor: (hoveredBox === 1 || hoveredBox === 2) ? '#FFDEA6' : '#76422C',
+            transition: 'background-image 0.2s ease-in-out, background-color 0.4s ease-in-out',
           }}
         >
           {(hoveredBox !== 1 && hoveredBox !== 2) && <span>Local Dining and Entertainment</span>}
@@ -185,6 +188,7 @@ const Info = () => {
             backgroundImage: hoveredBox
               ? `url(${imageUrls[hoveredBox].url1})`
               : 'none',
+              transition: 'background-image 0.2s ease-in-out, background-color 0.4s ease-in-out',
           }}
         />
         <div
@@ -193,6 +197,7 @@ const Info = () => {
             backgroundImage: hoveredBox
               ? `url(${imageUrls[hoveredBox].url2})`
               : 'none',
+              transition: 'background-image 0.2s ease-in-out, background-color 0.4s ease-in-out',
           }}
         />
       </div>

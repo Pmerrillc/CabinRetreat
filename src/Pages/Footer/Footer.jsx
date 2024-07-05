@@ -3,7 +3,7 @@ import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white flex flex-col md:flex-row justify-between items-center p-8">
+    <footer className="w-full bg-black text-white flex flex-col md:flex-row justify-between md:items-center items-start p-8">
       <div className="flex flex-col items-start space-y-4 mb-8 md:mb-0 md:pr-16">
         <a href='#'><h1 className="text-2xl">Cabin10.com</h1></a>
         <a href="https://www.facebook.com/riversresortcabin10?mibextid=LQQJ4d" className="text-white">
@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
       
       <div className="flex items-center mt-8 md:mt-0">
-        <a href="#" className="py-2 px-4 border-2 bg-white border-red-500 text-red-500 font-bold rounded-full hover:bg-red-500 hover:text-white">Book Now</a>
+        <a href="https://www.airbnb.com/slink/4wW5PCQ4" className="py-2 px-4 border-2 bg-white border-red-500 text-red-500 font-bold rounded-full hover:bg-red-500 hover:text-white">Book Now</a>
       </div>
     </footer>
   );

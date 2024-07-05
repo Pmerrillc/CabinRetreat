@@ -1,30 +1,15 @@
 import React from 'react';
 
-const HorizontalDivider = ({ iconUrl = 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1719995656/forest_okuyqu.png' }) => {
+const VerticalDivider = () => {
   return (
-    <div className="flex items-center justify-center my-4">
-      <hr className="flex-grow border-black h-px" />
-      {iconUrl && (
-        <img
-          src={iconUrl} // Add a descriptive alt text
-          className="mx-3 h-3 w-3" // Adjust size as needed
-        />
-      )}
-        {iconUrl && (
-        <img
-          src={iconUrl} // Add a descriptive alt text
-          className="mx-3 h-3 w-3" // Adjust size as needed
-        />
-      )}
-            {iconUrl && (
-        <img
-          src={iconUrl} // Add a descriptive alt text
-          className="mx-3 h-3 w-3" // Adjust size as needed
-        />
-      )}
-      <hr className="flex-grow border-black h-px" />
+    <div className="flex flex-col hidden md:block items-center justify-center h-full">
+      <div className="border-l border-black h-60"></div>
+      <div className="flex items-center justify-center h-16 w-16 bg-white">
+      <img src="https://res.cloudinary.com/dkcgwqdmm/image/upload/v1719995656/forest_okuyqu.png" alt="Tree Icon" className="h-4 w-4 object-contain" />
+      </div>
+      <div className="border-l border-black h-60"></div>
     </div>
   );
 };
 
-export default HorizontalDivider;
+export default VerticalDivider;
