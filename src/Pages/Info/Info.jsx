@@ -37,9 +37,9 @@ const Info = () => {
       return (
         <div className="box-content font-normal text-[10px] md:text-[12px] text-black">          
         <p>Swing Set: Perfect for kids to enjoy.</p>
-        <p>Fire Pit: Gather around for an evening under the stars.</p>
-        <p>River Fishing: Try your luck fishing in the river right at the edge of the property.</p>
-        <p>Community Pool: Enjoy a swim in the shared pool.</p>
+        <p>Fire Pit: An evening under the stars.</p>
+        <p>River Fishing: Fishing in the river right at the edge of the property.</p>
+        <p>Community Pool</p>
         </div>
       );
     } else if (contextBox === 1 && boxNumber === 3) {
@@ -62,16 +62,16 @@ const Info = () => {
           return (
             <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
               <p>Swing Set: Perfect for kids to enjoy.</p>
-              <p>Fire Pit: Gather around for an evening under the stars.</p>
-              <p>River Fishing: Try your luck fishing in the river right at the edge of the property.</p>
-              <p>Community Pool: Enjoy a swim in the shared pool.</p>
+              <p>Fire Pit: An evening under the stars.</p>
+              <p>River Fishing: Fishing in the river right at the edge of the property.</p>
+              <p>Community Pool</p>
             </div>
           );
 
         case 2:
           return (
             <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
-            <p>Hiking Trail to Pinecrest Lake: A scenic trail leading to Pinecrest Lake</p>
+            <p>Hiking Trail to Pinecrest Lake</p>
             <p>BBQ Area: Grill and dine under the tall pines.</p>
             <p>Private Deck: Relax and enjoy meals on the picturesque deck</p>
             </div>
@@ -80,7 +80,7 @@ const Info = () => {
             return (
                 <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
                   <p>Dodge Ridge:
-                  Winter sports (skiing/snowboarding)</p>
+                  Winter sports(skiing/snowboarding)</p>
                   <p>Tubing and snowplay</p>
                   <p>Summer mountain biking</p>
                   <p>Yoga classes</p>
@@ -88,7 +88,7 @@ const Info = () => {
                   <p>Live music</p>
                   <p>Kennedy Meadows:
                   Guided horseback rides
-                  Extensive hiking and pack trips</p>
+                  Extensive hiking and trips</p>
               </div>
             );
             case 4:
@@ -106,20 +106,20 @@ const Info = () => {
               case 5:
                 return (
                     <div className="box-content font-normal text-[10px] md:text-[12px] text-black">                    
-                    <p>Strawberry General Store: Snacks, beer, wine, and live music.</p>
-                    <p>Strawberry Inn Restaurant and Bar: Local cuisine and drinks.</p>
+                    <p>Strawberry General Store: Snacks, beer, wine, live music.</p>
+                    <p>Strawberry Inn: Local cuisine, drinks.</p>
                     <p>Steam Donkey: Popular spot in Pinecrest.</p>
-                    <p>Mia's Pizza: Brick oven pizza and specialties.</p>
+                    <p>Mia's Pizza: Brick oven specialties.</p>
                   </div>
                 );
                 case 6:
                   return (
                       <div className="box-content font-normal text-[10px] md:text-[12px] text-black">                    
-                    <p>The Pine Cone Cafe: Classic American dishes.</p>
-                    <p>The Sugar Shack: Sweets and treats.</p>
-                    <p>Pizza Factory: Family dining in Twain Harte.</p>
-                    <p>Diamond Jim’s Bar: Local bar in Mi Wuk.</p>
-                    <p>Ed's Cocktail Lounge: Cocktails in Twain Harte.</p>
+                    <p>Pine Cone Cafe: Classic American dishes.</p>
+                    <p>Sugar Shack: Sweets and treats.</p>
+                    <p>Pizza Factory: Family dining, Twain Harte.</p>
+                    <p>Diamond Jim’s Bar: Local bar, Mi Wuk.</p>
+                    <p>Ed's Cocktail Lounge: Cocktails, Twain Harte.</p>
                     </div>
                   );
         default:
