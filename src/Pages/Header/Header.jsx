@@ -41,7 +41,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className={`${isOpen ? 'block' : 'hidden'} absolute top-16 right-0 w-full bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} absolute top-16 right-0 w-full h-full bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden`}>
         <div className="flex justify-end p-4">
           <button onClick={toggleMenu} className="outline-none">
             <XIcon className="w-6 h-6 text-gray-700" />
