@@ -10,8 +10,7 @@
   @media (max-width: 480px) {
     .description-container {
       width: 80%; /* Adjust width as needed */
-      margin-top: 20vh;
-    margin-bottom:20vh; /* Centering vertically and horizontally */
+      margin: 20vh auto 20vh; /* Centering vertically and horizontally */
     }
   }
   
