@@ -1312,6 +1312,16 @@
   "resolved" "https://registry.npmjs.org/@eslint/js/-/js-8.57.0.tgz"
   "version" "8.57.0"
 
+"@fontsource/play@^5.0.20":
+  "integrity" "sha512-lbc5z7MIB6/E2eexsJfmVEVska4bOxNpdRmA6xV5cKgmh9lgo/R8NMjV5LU/qulSAkrf4/Quhaw/r7Knwf9Hew=="
+  "resolved" "https://registry.npmjs.org/@fontsource/play/-/play-5.0.20.tgz"
+  "version" "5.0.20"
+
+"@fontsource/playfair-display@^5.0.24":
+  "integrity" "sha512-r+h+PWl8R4dIQ5FikbwUGBF/DPsozH7YcfCxEcUm9SthLCcdKT53KH7iNGhF8RTCV325dyu/JjrA3G3JPUl5hQ=="
+  "resolved" "https://registry.npmjs.org/@fontsource/playfair-display/-/playfair-display-5.0.24.tgz"
+  "version" "5.0.24"
+
 "@fontsource/poppins@^5.0.14":
   "integrity" "sha512-nmM1zpPo3Uh4JcGAVSQuWaZNYh2FbbwWhZ5t6hRaynmJaNTBW85d3nEh9zMmzI0HX7X5xqQVdRHeDatKpOGsnA=="
   "resolved" "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.0.14.tgz"

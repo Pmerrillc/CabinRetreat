@@ -35,7 +35,7 @@ const Info = () => {
   const getContent = (boxNumber, contextBox) => {
     if (contextBox === 1 && boxNumber === 2) {
       return (
-        <div className="box-content font-normal text-[10px] md:text-[12px] text-black">          
+        <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">          
         <p>Swing Set: Perfect for kids to enjoy.</p>
         <p>Fire Pit: An evening under the stars.</p>
         <p>River Fishing: Fishing in the river right at the edge of the property.</p>
@@ -44,14 +44,14 @@ const Info = () => {
       );
     } else if (contextBox === 1 && boxNumber === 3) {
       return (
-        <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
+        <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">
           <p>Exclusive Dining: Discover hidden culinary gems.</p>
           <p>Live Entertainment: Enjoy local music and performances.</p>
         </div>
       );
     } else if (contextBox === 1 && boxNumber === 3) {
       return (
-        <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
+        <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">
           <p>Exclusive Dining: Discover hidden culinary gems.</p>
           <p>Live Entertainment: Enjoy local music and performances.</p>
         </div>
@@ -60,7 +60,7 @@ const Info = () => {
       switch (boxNumber) {
         case 1:
           return (
-            <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
+            <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">
               <p>Swing Set: Perfect for kids to enjoy.</p>
               <p>Fire Pit: An evening under the stars.</p>
               <p>River Fishing: Fishing in the river right at the edge of the property.</p>
@@ -70,7 +70,7 @@ const Info = () => {
 
         case 2:
           return (
-            <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
+            <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">
             <p>Hiking Trail to Pinecrest Lake</p>
             <p>BBQ Area: Grill and dine under the tall pines.</p>
             <p>Private Deck: Relax and enjoy meals on the picturesque deck</p>
@@ -78,7 +78,7 @@ const Info = () => {
           );
           case 3:
             return (
-                <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
+                <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">
                   <p>Dodge Ridge:
                   Winter sports</p><p>(skiing/snowboarding)</p>
                   <p>Tubing and snowplay</p>
@@ -92,7 +92,7 @@ const Info = () => {
             );
             case 4:
               return (
-                  <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
+                  <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">
                   <p>Beach: Sun and fun</p>
                   <p>Boat rentals</p>
                   <p>Paddle boarding</p>
@@ -104,7 +104,7 @@ const Info = () => {
               );
               case 5:
                 return (
-                    <div className="box-content font-normal text-[10px] md:text-[12px] text-black">                    
+                    <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">                    
                     <p>Strawberry General Store: Snacks, beer, wine, live music.</p>
                     <p>Strawberry Inn: Local cuisine, drinks.</p>
                     <p>Steam Donkey: Popular spot in Pinecrest.</p>
@@ -113,7 +113,7 @@ const Info = () => {
                 );
                 case 6:
                   return (
-                      <div className="box-content font-normal text-[10px] md:text-[12px] text-black">                    
+                      <div className="box-content font-normal text-[10px] md:text-[12px] text-black font-sans">                    
                     <p>Pine Cone Cafe: American classics.</p>
                     <p>Sugar Shack: Sweets & treats.</p>
                     <p>Pizza Factory: Family dining, Twain Harte.</p>
@@ -129,7 +129,7 @@ const Info = () => {
 
   return (
     <div className="description-container">
-      <h1 className="text-4xl font-bold">Things to do nearby</h1>
+      <h1 className="text-4xl font-bold ">Things to do nearby</h1>
       <div className="row">
         <div
           className={`box box1 ${hoveredBox === 1 ? 'hovered' : ''}`}

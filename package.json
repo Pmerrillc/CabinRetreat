@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/play": "^5.0.20",
+    "@fontsource/playfair-display": "^5.0.24",
     "@fontsource/poppins": "^5.0.14",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",

@@ -5,7 +5,7 @@ const Book = () => {
 
   return (
     <div className="flex flex-col items-center gap-10 justify-center h-[40vh]">
-      <h2 className="text-3xl md:w-full w-[70%] font-bold hover:text-black text-center justify-center">
+      <h2 className="text-3xl md:w-full w-[70%] font-bold hover:text-black text-center justify-center font-serif font-semibold">
         You can also book us directly via
       </h2>
       <div className="relative flex items-center justify-center w-1/2 md:w-1/4 h-[50px]">

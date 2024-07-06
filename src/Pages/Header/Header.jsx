@@ -17,23 +17,23 @@ const Header = () => {
     <header className=" top-0 left-0 w-full bg-white z-10 h-16">
       <div className="container mx-auto px-6 py-3 flex  justify-end items-center">
         <nav className="hidden md:flex items-center space-x-10">
-          <Link to="section1" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer">
+          <Link to="section1" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Property Details
           </Link>
-          <Link to="section2" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer">
+          <Link to="section2" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Things to do nearby
           </Link>
-          <Link to="section3" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer">
+          <Link to="section3" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Contact Details
           </Link>
           <button
           onClick={handleClick} 
-          className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold">
+          className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
             Book Now
           </button>
         </nav>
         <div className="md:hidden flex items-center space-x-2 w-full justify-between">
-          <button className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold">
+          <button className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
             Book Now
           </button>
           <button onClick={toggleMenu} className="outline-none mobile-menu-button">
@@ -48,13 +48,13 @@ const Header = () => {
           </button>
         </div>
         <nav className="flex flex-col items-center space-y-4 p-4">
-          <Link to="section1" smooth={true} duration={500} onClick={toggleMenu} className="text-gray-700 font-semibold cursor-pointer">
+          <Link to="section1" smooth={true} duration={500} onClick={toggleMenu} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Property Details
           </Link>
-          <Link to="section2" smooth={true} duration={500} onClick={toggleMenu} className="text-gray-700 font-semibold cursor-pointer">
+          <Link to="section2" smooth={true} duration={500} onClick={toggleMenu} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Things to do nearby
           </Link>
-          <Link to="section3" smooth={true} duration={500} onClick={toggleMenu} className="text-gray-700 font-semibold cursor-pointer">
+          <Link to="section3" smooth={true} duration={500} onClick={toggleMenu} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Contact Details
           </Link>
         </nav>

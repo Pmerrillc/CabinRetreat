@@ -7,7 +7,8 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      primary: 'Poppins',
+      sans: ['Poppins', 'sans-serif'],
+      serif: ['Playfair Display', 'serif'],
     },
     extend: {},
   },

@@ -1,16 +1,21 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import VerticalImageSlider from '../../components/VerticalImageSlider';
 import DetailsText from '../../components/DetailsText';
+import ImageGrid from '../../components/ImageGrid';
+import TextDetails from '../../components/TextDetails';
 
 const Details = () => {
+  const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1024px)' });
+
   return (
-    <div className="flex flex-col justify-center items-center w-full">
-      <div className="flex flex-col lg:flex-col items-center justify-center space-y-8 lg:space-y-0 lg:space-x-8">
-        <VerticalImageSlider />
-        <DetailsText />
+    <div className="min-h-[70vh] flex flex-col justify-center w-full md:w-[100%]">
+      <div className="flex flex-col lg:flex-row items-center justify-center">
+        {isDesktopOrLaptop ? <VerticalImageSlider /> : <ImageGrid />}
+        {isDesktopOrLaptop ? <DetailsText /> : <TextDetails />}
       </div>
     </div>
   );
-};
+}
 
 export default Details;

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @keyframes scroll {
     0% {
       transform: translateY(100%);

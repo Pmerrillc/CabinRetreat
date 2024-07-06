@@ -1,7 +1,7 @@
 import React from 'react';
 import HorizontalLine from '../reusable/HorizontalLine';
 
-const DetailsText = () => {
+const TextDetails = () => {
 
   const features = [
     { src: 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720012206/Group_55_fks8cm.png', text: 'Mountain experience' },
@@ -15,11 +15,11 @@ const DetailsText = () => {
   ];
   
   return (
-    <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[100vh]">
+    <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[70vh]">
       <div className="text-3xl font-semibold mb-8 text-center font-serif">
         <h1>Nature-Filled Mountain<br />Cabin Retreat</h1>
       </div>
-      <div className="text-md font-medium text-center w-[95%] font-sans">
+      <div className="text-md font-medium text-center w-[80%] font-sans">
         Relax in the vintage charm and comfort of this river view mountain
         retreat minutes from Pinecreat lake and Dodge Ridge. A family friendly
         vacation location with something for everyone. Enjoy a swing set,
@@ -59,25 +59,25 @@ const DetailsText = () => {
   </div>
 
   {/* Desktop view */}
-  <div className="hidden md:block">
-    <div className="flex flex-row space-x-20 md:space-x-8 mb-6">
-      <div className="flex flex-row space-x-4 items-center w-[40%] font-bold">
+  <div className="hidden md:block items-center justify-start">
+    <div className="flex flex-row space-x-20 md:space-x-0 mb-6">
+      <div className="flex flex-row space-x-4 items-center w-[40%] font-bold font-sans">
         <img src={features[0].src} alt="Mountain experience" className="w-6 h-6" />
         <span>{features[0].text}</span>
       </div>
       <div className="flex flex-col md:flex-row space-y-2">
-        <div className="flex items-center space-x-2 font-bold">
+        <div className="flex items-center space-x-2 font-bold  font-sans">
           <img src={features[1].src} alt="Address" className="w-6 h-6" />
           <span>{features[1].text}</span>
         </div>
-        <div className="pl-8 md:w-[65%]">
-          <span className="text-xs text-black font-semibold">{features[1].detail}</span>
+        <div className="pl-8 md:w-[50%]">
+          <span className="text-xs text-black font-semibold font-sans">{features[1].detail}</span>
         </div>
       </div>
     </div>
-    <div className="grid grid-cols-3 gap-10">
+    <div className="grid grid-cols-3 gap-10 gap-x-[33vh]">
       {features.slice(2).map((icon, index) => (
-        <div key={index} className="flex items-center space-x-2 font-bold">
+        <div key={index} className="flex items-center space-x-2 font-bold font-sans">
           <img src={icon.src} alt={`Icon ${index + 3}`} className="w-6 h-6" />
           <span>{icon.text}</span>
         </div>
@@ -90,4 +90,4 @@ const DetailsText = () => {
   )
 }
 
-export default DetailsText;
+export default TextDetails;
