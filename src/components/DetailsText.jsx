@@ -15,11 +15,11 @@ const DetailsText = () => {
   ];
   
   return (
-    <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[100vh]">
+    <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[70vh]">
       <div className="text-3xl font-semibold mb-8 text-center">
         <h1>Nature-Filled Mountain<br />Cabin Retreat</h1>
       </div>
-      <div className="text-md font-medium text-center w-[95%]">
+      <div className="text-md font-medium text-center w-[80%]">
         Relax in the vintage charm and comfort of this river view mountain
         retreat minutes from Pinecreat lake and Dodge Ridge. A family friendly
         vacation location with something for everyone. Enjoy a swing set,
@@ -59,8 +59,8 @@ const DetailsText = () => {
   </div>
 
   {/* Desktop view */}
-  <div className="hidden md:block">
-    <div className="flex flex-row space-x-20 md:space-x-8 mb-6">
+  <div className="hidden md:block items-center justify-start">
+    <div className="flex flex-row space-x-20 md:space-x-0 mb-6">
       <div className="flex flex-row space-x-4 items-center w-[40%] font-bold">
         <img src={features[0].src} alt="Mountain experience" className="w-6 h-6" />
         <span>{features[0].text}</span>
@@ -70,12 +70,12 @@ const DetailsText = () => {
           <img src={features[1].src} alt="Address" className="w-6 h-6" />
           <span>{features[1].text}</span>
         </div>
-        <div className="pl-8 md:w-[65%]">
+        <div className="pl-8 md:w-[50%]">
           <span className="text-xs text-black font-semibold">{features[1].detail}</span>
         </div>
       </div>
     </div>
-    <div className="grid grid-cols-3 gap-10">
+    <div className="grid grid-cols-3 gap-10 gap-x-[33vh]">
       {features.slice(2).map((icon, index) => (
         <div key={index} className="flex items-center space-x-2 font-bold">
           <img src={icon.src} alt={`Icon ${index + 3}`} className="w-6 h-6" />
