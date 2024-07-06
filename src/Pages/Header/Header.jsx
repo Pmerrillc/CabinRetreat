@@ -41,7 +41,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} transform fixed top-0 right-0 w-64 h-full bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden`}>
+      <div className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} transform absolute top-0 right-0 w-full  h-1/2 bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden`}>
         <div className="flex justify-end p-4">
           <button onClick={toggleMenu} className="outline-none">
             <XIcon className="w-6 h-6 text-gray-700" />
