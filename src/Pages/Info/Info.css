@@ -4,17 +4,19 @@
     align-items: center;
     justify-content:center;
     margin-top: 20vh;
+    margin-bottom:20vh;
   }
 
   @media (max-width: 480px) {
     .description-container {
       width: 80%; /* Adjust width as needed */
-      margin: 20vh auto 0; /* Centering vertically and horizontally */
+      margin-top: 20vh;
+    margin-bottom:20vh; /* Centering vertically and horizontally */
     }
   }
   
   .description-container h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10vh;
     text-align: center;
     font-family: 'Playfair Display', 'serif';
     padding-bottom: 30px;

@@ -10,7 +10,7 @@ import ContactMain from "./Pages/Contact/ContactMain";
 import Map from "./components/Map";
 import Footer from "./Pages/Footer/Footer";
 import '@fontsource/poppins';
-import '@fontsource/playfair-display';
+import '@fontsource/playfair-display'; 
 
 
 
