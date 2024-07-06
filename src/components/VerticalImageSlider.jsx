@@ -32,7 +32,7 @@ const VerticalImageSlider = () => {
     setCarouselArray(updatedGallery(newCarouselArray));
   };
 
-  const startAutoplay = (interval = 5000) => {
+  const startAutoplay = (interval = 4000) => {
     intervalRef.current = setInterval(() => {
       setCurrentState("next");
     }, interval);
@@ -43,7 +43,7 @@ const VerticalImageSlider = () => {
   };
 
   return (
-    <div className="flex items-center justify-center  w-full h-[150%]">
+    <div className="flex items-center justify-center  w-full h-screen">
       <div className="relative flex flex-col items-center h-fit overflow-hidden">
         {carouselArray.map((image, index) => (
           <img
@@ -51,7 +51,7 @@ const VerticalImageSlider = () => {
             src={image.src}
             alt={`Slide ${index + 1}`}
             className={`relative transition-opacity duration-1000 ease-in-out ${getOpacityClass(index)} mb-4`} /* Added spacing */
-            style={{ top: `${index * 10}%` }}
+            style={{ top: `${(index - 2) * (window.innerWidth < 768 ? 5 : 10)}%` }} 
           />
         ))}
       </div>
