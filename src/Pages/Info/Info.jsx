@@ -80,15 +80,14 @@ const Info = () => {
             return (
                 <div className="box-content font-normal text-[10px] md:text-[12px] text-black">
                   <p>Dodge Ridge:
-                  Winter sports(skiing/snowboarding)</p>
+                  Winter sports</p><p>(skiing/snowboarding)</p>
                   <p>Tubing and snowplay</p>
                   <p>Summer mountain biking</p>
-                  <p>Yoga classes</p>
+                  <p>Yoga classes</p><p>Live music</p>
                   <p>Disc golf courses</p>
-                  <p>Live music</p>
-                  <p>Kennedy Meadows:
-                  Guided horseback rides
-                  Extensive hiking and trips</p>
+                  <p>Kennedy Meadows:</p>
+                  <p>Guided horse rides</p>
+                  <p>Hiking and trips</p>
               </div>
             );
             case 4:
@@ -115,11 +114,11 @@ const Info = () => {
                 case 6:
                   return (
                       <div className="box-content font-normal text-[10px] md:text-[12px] text-black">                    
-                    <p>Pine Cone Cafe: Classic American dishes.</p>
-                    <p>Sugar Shack: Sweets and treats.</p>
+                    <p>Pine Cone Cafe: American classics.</p>
+                    <p>Sugar Shack: Sweets & treats.</p>
                     <p>Pizza Factory: Family dining, Twain Harte.</p>
-                    <p>Diamond Jim’s Bar: Local bar, Mi Wuk.</p>
-                    <p>Ed's Cocktail Lounge: Cocktails, Twain Harte.</p>
+                    <p>Diamond Jim's: Local bar, Mi Wuk.</p>
+                    <p>Ed's Lounge: Cocktails, Twain Harte.</p>
                     </div>
                   );
         default:
