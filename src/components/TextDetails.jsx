@@ -15,7 +15,7 @@ const TextDetails = () => {
   ];
   
   return (
-    <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[70vh]">
+    <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[100vh] ">
       <div className="text-3xl font-semibold mb-8 text-center font-serif">
         <h1>Nature-Filled Mountain<br />Cabin Retreat</h1>
       </div>
