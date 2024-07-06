@@ -14,8 +14,8 @@ const Header = () => {
   };
 
   return (
-    <header className=" top-0 left-0 w-full bg-white z-10 h-16">
-      <div className="container mx-auto px-6 py-3 flex  justify-end items-center">
+    <header className="top-0 left-0 w-full bg-white z-10 h-16">
+      <div className="container mx-auto px-6 py-3 flex justify-end items-center">
         <nav className="hidden md:flex items-center space-x-10">
           <Link to="section1" smooth={true} duration={500} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Property Details
@@ -27,13 +27,13 @@ const Header = () => {
             Contact Details
           </Link>
           <button
-          onClick={handleClick} 
-          className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
+            onClick={handleClick} 
+            className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
             Book Now
           </button>
         </nav>
         <div className="md:hidden flex items-center space-x-2 w-full justify-between">
-          <button className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
+          <button onClick={handleClick} className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
             Book Now
           </button>
           <button onClick={toggleMenu} className="outline-none mobile-menu-button">
@@ -41,7 +41,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} transform absolute top-0 right-0 w-full  h-1/2 bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} absolute top-16 right-0 w-full bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden`}>
         <div className="flex justify-end p-4">
           <button onClick={toggleMenu} className="outline-none">
             <XIcon className="w-6 h-6 text-gray-700" />
