@@ -16,19 +16,19 @@ const Footer = () => {
         <div className="flex flex-col space-y-2 mb-4 md:mb-0">
           <a href="https://www.airbnb.com/slink/4wW5PCQ4" className="text-white hover:text-[#6e6e6e]">AirBnB</a>
           <a href="https://www.riversresortrentals.com/en/rivers-resort-cabin-10" className="text-white hover:text-[#6e6e6e]">Lodgify</a>
-          <Link to="contact" smooth={true} duration={500} className="text-white hover:text-[#6e6e6e] cursor-pointer">
+          <Link to="contact" smooth="easeInOutQuad" duration={1000} className="text-white hover:text-[#6e6e6e] cursor-pointer">
             Contact us
           </Link>
         </div>
         
         <div className="flex flex-col space-y-2">
-          <Link to="section2" smooth={true} duration={500} className="text-white hover:text-[#6e6e6e] cursor-pointer">
+          <Link to="section2" smooth="easeInOutQuad" duration={1000} className="text-white hover:text-[#6e6e6e] cursor-pointer">
             Listing description
           </Link>
-          <Link to="section2" smooth={true} duration={500} className="text-white hover:text-[#6e6e6e] cursor-pointer">
+          <Link to="section2" smooth="easeInOutQuad" duration={1000} className="text-white hover:text-[#6e6e6e] cursor-pointer">
             Things to do nearby
           </Link>
-          <Link to="section1" smooth={true} duration={500} className="text-white hover:text-[#6e6e6e] cursor-pointer">
+          <Link to="section1" smooth="easeInOutQuad" duration={1000} className="text-white hover:text-[#6e6e6e] cursor-pointer">
             Property Details
           </Link>
         </div>
