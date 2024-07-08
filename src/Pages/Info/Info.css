@@ -1,4 +1,5 @@
 .description-container {
+    height:100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,14 +7,6 @@
     margin-top: 20vh;
     margin-bottom:20vh;
   }
-
-  @media (max-width: 480px) {
-    .description-container {
-      width: 80%; /* Adjust width as needed */
-      margin: 20vh auto 0; /* Centering vertically and horizontally */
-    }
-  }
-  
   .description-container h1 {
     margin-bottom: 10vh;
     text-align: center;

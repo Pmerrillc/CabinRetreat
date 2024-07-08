@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Element } from 'react-scroll';
 import '../Info/Info.css'; // Ensure correct path to your CSS
 
 const Info = () => {
@@ -128,6 +129,7 @@ const Info = () => {
   };
 
   return (
+    <Element name="section2">
     <div className="description-container">
       <h1 className="text-4xl font-bold ">Things to do nearby</h1>
       <div className="row">
@@ -201,6 +203,7 @@ const Info = () => {
         />
       </div>
     </div>
+    </Element>
   );
 };
 
