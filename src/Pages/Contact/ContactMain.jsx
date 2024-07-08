@@ -8,11 +8,11 @@ const ContactMain = () => {
   return (
     <Element name='section3'>
     <div className="min-h-[100vh] flex flex-col lg:flex-row justify-center items-center w-full px-10 space-y-10">
-      <div className="w-full lg:w-1/2 flex justify-start relative">
+      <div className="w-full lg:w-1/2 flex justify-center relative">
         <ContactForm />
       </div>
-      <VerticalDivider />
-      <div className="w-full lg:w-1/2 flex justify-start relative">
+      <VerticalDivider/>
+      <div className="w-full lg:w-1/2 flex justify-center relative">
         <ContactText />
       </div>
     </div>

@@ -60,7 +60,7 @@ const TextDetails = () => {
 
   {/* Desktop view */}
   <div className="hidden md:block items-center justify-start">
-    <div className="flex flex-row space-x-20 md:space-x-0 mb-6">
+    <div className="flex flex-row lg:space-x-10 xl:space-x-20 md:space-x-0 mb-6">
       <div className="flex flex-row space-x-4 items-center w-[40%] font-bold font-sans">
         <img src={features[0].src} alt="Mountain experience" className="w-6 h-6" />
         <span>{features[0].text}</span>
@@ -75,7 +75,7 @@ const TextDetails = () => {
         </div>
       </div>
     </div>
-    <div className="grid grid-cols-3 gap-10 gap-x-[33vh]">
+    <div className="grid grid-cols-3 gap-10">
       {features.slice(2).map((icon, index) => (
         <div key={index} className="flex items-center space-x-2 font-bold font-sans">
           <img src={icon.src} alt={`Icon ${index + 3}`} className="w-6 h-6" />
