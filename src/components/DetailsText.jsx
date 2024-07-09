@@ -17,7 +17,7 @@ const DetailsText = () => {
   return (
     <div className="md:w-full w-[90%] flex flex-col items-center justify-center h-[100vh]">
       <div className="text-3xl font-semibold mb-8 text-center font-serif">
-        <h1>Nature-Filled Mountain<br />Cabin Retreat</h1>
+        <h1>Mountain<br />Cabin</h1>
       </div>
       <div className="text-md font-medium text-center w-[95%] font-sans">
         Relax in the vintage charm and comfort of this river view mountain
@@ -26,8 +26,7 @@ const DetailsText = () => {
         fire pit or try your luck fishing the river at the edge of the
         property. Spend a day at the lake, go for a hike, or rent a downhill
         mountain bike. BBQ under the tall pines and enjoy a meal on the
-        picturesque private deck. Check out the Space section for a complete
-        list of nearby things to do!
+        picturesque private deck.
       </div>
       <HorizontalLine />
       <div className="container mt-10 md:ml-20">

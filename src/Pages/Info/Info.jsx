@@ -11,7 +11,7 @@ const Info = () => {
       url2: 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720024782/pexels-kindelmedia-7148674_1_tbjuay.png',
     },
     2: {
-      url1: 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720024782/pexels-bianeyre-1236028_1_jxufnr.png',
+      url1: 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720494577/horseback_kbimoo.jpg',
       url2: 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720024781/pexels-visitalmaty-848595_1_gqwixs.png',
     },
     3: {

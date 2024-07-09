@@ -8,7 +8,7 @@ const BookNowText = () => {
     <div className="lg:w-1/2 mb-8 lg:mb-0 mt-10 md:mt-0">
         <div className='flex flex-col items-center justify-center'>
         <h1 className="text-[30px] font-bold mb-8 text-center w-3/4 md:w-full font-serif">Discover your perfect <br />
-         family-friendly cabin retreat</h1>
+         family-friendly cabin</h1>
         <p className="text-md w-3/4 mb-8 text-center font-sans font-semibold">
         Book today and enjoy vintage charm with modern comfort tomorrow
         </p>
