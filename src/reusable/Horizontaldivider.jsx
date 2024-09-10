@@ -6,18 +6,21 @@ const HorizontalDivider = ({ iconUrl = 'https://res.cloudinary.com/dkcgwqdmm/ima
       <hr className="flex-grow border-black h-px" />
       {iconUrl && (
         <img
+          alt=''
           src={iconUrl} // Add a descriptive alt text
           className="mx-3 h-3 w-3" // Adjust size as needed
         />
       )}
         {iconUrl && (
         <img
+          alt=''
           src={iconUrl} // Add a descriptive alt text
           className="mx-3 h-3 w-3" // Adjust size as needed
         />
       )}
             {iconUrl && (
         <img
+          alt=''
           src={iconUrl} // Add a descriptive alt text
           className="mx-3 h-3 w-3" // Adjust size as needed
         />
