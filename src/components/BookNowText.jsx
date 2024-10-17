@@ -18,17 +18,17 @@ const BookNowText = () => {
 
         <div className="relative flex items-center w-3/4 h-[50px]">
         <button
-        className="flex items-center px-6 py-2 border-2 border-red-500 text-red-500 font-bold rounded-full hover:bg-red-500 hover:text-white transition duration-300 ease-in-out w-full"
+        className="relative flex items-center px-6 py-2 border-2 border-black text-black font-bold rounded-full hover:bg-black hover:text-[#62C4B1] transition duration-300 ease-in-out w-full"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onClick={() => window.location.href = 'https://www.airbnb.com/slink/4wW5PCQ4'}
-         >
-        <span className="flex-1 text-center font-sans">BOOK NOW</span>
-        </button>
+        onClick={() => window.location.href = 'https://www.riversresortrentals.com/en/rivers-resort-cabin-10'}
+      >
+        <span className="flex-1 text-center">Lodgify</span>
+      </button>
         <img
-        src={isHovered ? 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1719990977/Group_65_yjw4go.png' : 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1719994740/Group_66_om36qf.png'}
-        alt="Overlay Image"
-        className="absolute right-0 h-full transition duration-300 ease-in-out"
+          src={isHovered ? 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720015216/Layer_1_dwxucj.png' : 'https://res.cloudinary.com/dkcgwqdmm/image/upload/v1720015216/Layer_1_dwxucj.png'}
+          alt="Overlay Image"
+          className="absolute right-0 h-1/2 md:h-3/4 bottom-6 w-auto transition duration-300 ease-in-out"
         />
         </div>
 
