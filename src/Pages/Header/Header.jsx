@@ -42,16 +42,20 @@ const Header = () => {
           <Link to="section3" smooth="easeInOutQuad" duration={1000} className="text-gray-700 font-semibold cursor-pointer font-sans">
             Contact Details
           </Link>
-          <button
-            onClick={handleClick} 
-            className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
-            Book Now
-          </button>
+        <button
+            className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold"
+            onClick={() => window.location.href = 'https://www.riversresortrentals.com/en/rivers-resort-cabin-10'}
+          >
+          Book Now
+        </button>
         </nav>
         <div className="md:hidden flex items-center space-x-2 w-full justify-between">
-          <button onClick={handleClick} className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold font-sans">
-            Book Now
-          </button>
+        <button
+            className="bg-[#FF5A5A] text-white px-4 py-2 rounded-3xl font-bold"
+            onClick={() => window.location.href = 'https://www.riversresortrentals.com/en/rivers-resort-cabin-10'}
+          >
+          Book Now
+        </button>
           <button onClick={toggleMenu} className="outline-none mobile-menu-button">
             <MenuIcon className="w-6 h-6 text-gray-700" />
           </button>
