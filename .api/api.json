@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "lodgify",
+      "source": "@lodgify/v1.0#1lpdjq2hm2c3gebb",
+      "integrity": "sha512-yK/fXmmPJhvU4QycElSoXdiLgCFh+5db5cB5ArXqlHHXxMCdtWTKJ0g1/GFtVzb1AFc/9kGmLXsAtQEAvZDcNA==",
+      "installerVersion": "6.1.2"
+    }
+  ]
+}
