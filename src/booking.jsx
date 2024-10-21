@@ -35,57 +35,59 @@ const BookingForm = () => {
   };
   
   return (
-    <form
-      onSubmit={handleBooking}
-      className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md"
-    >
-      <h2 className="text-2xl font-bold mb-6">Dates</h2>
+    <div className="min-h-[50vh] flex items-center justify-center bg-white">
+  <form
+    onSubmit={handleBooking}
+    className="max-w-lg w-full bg-white p-6 rounded-lg shadow-md"
+  >
+    <h2 className="text-2xl font-bold mb-6">Dates</h2>
 
-      <div className="grid grid-cols-3 gap-4 mb-4">
-        <div>
-          <label className="block text-sm font-medium mb-1">Check-in Date:</label>
-          <input
-            type="date"
-            value={checkInDate}
-            onChange={(e) => setCheckInDate(e.target.value)}
-            required
-            className="w-full border border-gray-300 rounded-lg p-2"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Check-out Date:</label>
-          <input
-            type="date"
-            value={checkOutDate}
-            onChange={(e) => setCheckOutDate(e.target.value)}
-            required
-            className="w-full border border-gray-300 rounded-lg p-2"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Guests:</label>
-          <input
-            type="number"
-            value={guests}
-            onChange={(e) => setGuests(e.target.value)}
-            min="1"
-            required
-            className="w-full border border-gray-300 rounded-lg p-2"
-          />
-        </div>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Check-in Date:</label>
+        <input
+          type="date"
+          value={checkInDate}
+          onChange={(e) => setCheckInDate(e.target.value)}
+          required
+          className="w-full border border-gray-300 rounded-lg p-2"
+        />
       </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Check-out Date:</label>
+        <input
+          type="date"
+          value={checkOutDate}
+          onChange={(e) => setCheckOutDate(e.target.value)}
+          required
+          className="w-full border border-gray-300 rounded-lg p-2"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Guests:</label>
+        <input
+          type="number"
+          value={guests}
+          onChange={(e) => setGuests(e.target.value)}
+          min="1"
+          required
+          className="w-full border border-gray-300 rounded-lg p-2"
+        />
+      </div>
+    </div>
 
-      <button
-        type="submit"
-        className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition duration-200"
-      >
-        Continue
-      </button>
+    <button
+      type="submit"
+      className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition duration-200"
+    >
+      Continue
+    </button>
 
-      {message && (
-        <p className="mt-4 text-center text-gray-700">{message}</p>
-      )}
-    </form>
+    {message && (
+      <p className="mt-4 text-center text-gray-700">{message}</p>
+    )}
+  </form>
+</div>
   );
 };
 
