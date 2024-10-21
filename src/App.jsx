@@ -11,6 +11,7 @@ import Map from "./components/Map";
 import Footer from "./Pages/Footer/Footer";
 import '@fontsource/poppins';
 import '@fontsource/playfair-display'; 
+import BookingForm from "./booking";
 
 
 
@@ -25,6 +26,9 @@ const App = () => {
       <Horizontaldivider />
       <Routes>
         <Route path="/" element={<Details />}/>
+      </Routes>
+      <Routes>
+        <Route path="/" element={<BookingForm />}/>
       </Routes>
       <Routes>
         <Route path="/" element={<InfoSection />}/>
