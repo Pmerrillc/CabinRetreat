@@ -35,7 +35,7 @@ const BookingForm = () => {
   };
   
   return (
-    <div className="min-h-[50vh] flex items-center justify-center bg-white">
+    <div className="md:mt-20vh min-h-[50vh] flex items-center justify-center bg-white">
   <form
     onSubmit={handleBooking}
     className="max-w-lg w-full bg-white p-6 rounded-lg shadow-md"
