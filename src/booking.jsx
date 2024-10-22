@@ -18,7 +18,7 @@ const BookingForm = () => {
       const checkoutUrl = new URL(`https://checkout.lodgify.com/riversresortrentals/${propertyId}/reservation`);
   
       // Add necessary query parameters
-      checkoutUrl.searchParams.append('currency', 'INR');
+      checkoutUrl.searchParams.append('currency', 'USD');
       checkoutUrl.searchParams.append('guests', guests);
       checkoutUrl.searchParams.append('arrival', checkInDate);  // Correct parameter for check-in
       checkoutUrl.searchParams.append('departure', checkOutDate); // Correct parameter for check-out
