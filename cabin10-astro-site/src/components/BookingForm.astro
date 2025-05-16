@@ -1,0 +1,205 @@
+---
+import Button from "./Button.astro";
+const date = new Date();
+
+const isoString = date.toISOString();
+const todayDate = isoString.split("T")[0];
+---
+
+<div class:list={["container"]}>
+  <form id="booking-form">
+    <div class:list={["form-field-container"]}>
+      <div class:list={["form-item"]}>
+        <label class:list={["inter-regular"]} for="checkInDate"
+          >Check-in Date</label
+        >
+        <input
+          class:list={["inter-regular", "input"]}
+          type="date"
+          value={todayDate}
+          min={todayDate}
+          name="checkInDate"
+          id="checkInDate"
+          required
+        />
+      </div>
+
+      <div class:list={["form-item"]}>
+        <label class:list={["inter-regular"]} for="checkOutDate"
+          >Check-out Date</label
+        >
+        <input
+          class:list={["inter-regular", "input"]}
+          type="date"
+          value={todayDate}
+          min={todayDate}
+          name="checkOutDate"
+          id="checkOutDate"
+          required
+        />
+      </div>
+
+      <div class:list={["form-item"]}>
+        <label class:list={["inter-regular"]} for="adults">Adults</label>
+        <input
+          class:list={["inter-regular", "input"]}
+          type="number"
+          name="adults"
+          id="adults"
+          value="1"
+          min="1"
+          required
+        />
+      </div>
+
+      <div class:list={["form-item"]}>
+        <label class:list={["inter-regular"]} for="children">Children</label>
+        <input
+          class:list={["inter-regular", "input"]}
+          type="number"
+          name="children"
+          id="children"
+          value="0"
+          min="0"
+        />
+      </div>
+    </div>
+
+    <Button submitButton={true} buttonStyle="primary" fullWidth={true}>
+      Book Now
+    </Button>
+
+    <p id="formMessage"></p>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById(
+      "booking-form"
+    ) as HTMLFormElement | null;
+    const messageEl = document.getElementById("formMessage");
+
+    if (!form) {
+      return;
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const checkInDate = form.checkInDate.value;
+      const checkOutDate = form.checkOutDate.value;
+      const adults = form.adults.value;
+      const children = form.children.value;
+      const propertyId = "440616";
+
+      if (!checkInDate || !checkOutDate || !adults) {
+        messageEl.textContent = "Please fill in all the fields";
+        return;
+      }
+
+      try {
+        const checkoutUrl = new URL(
+          `https://checkout.lodgify.com/riversresortrentals/${propertyId}/reservation`
+        );
+        checkoutUrl.searchParams.append("currency", "USD");
+        checkoutUrl.searchParams.append("adults", adults);
+        checkoutUrl.searchParams.append("children", children);
+        checkoutUrl.searchParams.append("arrival", checkInDate);
+        checkoutUrl.searchParams.append("departure", checkOutDate);
+        checkoutUrl.searchParams.append(
+          "_gl",
+          "1*18fnl19*_ga*NDE2ODUyMDgyLjE3MTkwNjgzMzU.*_ga_GTQS7L994W*MTcyOTQ0NzQzMy44LjAuMTcyOTQ0NzQzMy4wLjAuMA.."
+        );
+
+        window.location.href = checkoutUrl.toString();
+      } catch (error) {
+        console.error("Error redirecting to Lodgify checkout:", error);
+        messageEl.textContent = "Error during redirection";
+      }
+    });
+  });
+</script>
+<style>
+  .container {
+    display: flex;
+    padding-bottom: 96px;
+    width: 100%;
+  }
+
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-field-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+
+    padding-bottom: 32px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .input {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: none;
+    max-width: 100%;
+  }
+
+  input[type="date"] {
+    background-color: white;
+    text-align: right;
+    border-radius: 0px !important;
+    min-width: 95%;
+    color: black;
+  }
+
+  input[name="adults"] {
+    width: 100%;
+  }
+  input[name="children"] {
+    width: 100%;
+  }
+
+  label {
+    color: white;
+  }
+
+  #booking-form {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .booking-form {
+      max-width: 100%;
+    }
+
+    .input {
+      font-size: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: none;
+      max-width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 1199px) {
+    .form-field-container {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 32px;
+      gap: 16px;
+      max-width: 100%;
+    }
+    .input {
+      font-size: 0.75rem;
+    }
+  }
+</style>

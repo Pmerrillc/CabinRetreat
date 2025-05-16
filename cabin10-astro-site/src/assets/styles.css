@@ -1,0 +1,222 @@
+/* CSS RESETS */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+    text-align: inherit;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    color: inherit;
+    font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[role='list'],
+ol[role='list'],
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, a, span, p, button, li {
+font-family: "Inter", sans-serif, 'Lucida Sans', 'Lucida Sans Regular'
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.625rem;
+}
+h4 {
+  font-size: 1.333rem;
+}
+h5 {
+  font-size: 1.25rem;
+  line-height: 150%;
+  font-weight: normal;
+}
+
+h6 {
+  font-size: 1.125rem;
+  line-height: 150%;
+}
+
+p {
+  line-height: 150%;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+  /* VARIABLES */
+  :root {
+    --dark-gray: black; 
+    --light-green: #F2FFF2;
+    --dark-green: #022B00
+  }
+
+
+@media screen and (min-width: 789px) {
+  h1 {
+    font-size: 4em;
+      line-height: 110%;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.5rem;
+  }
+  
+  h6 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+}
+.eyebrow-text {
+  font-size: 0.75rem;
+}
+.page-padding {
+    padding: 0 16px;
+    @media screen and (min-width: 789px) {
+        padding: 0 64px;
+    }
+    @media screen and (min-width: 1199px) {
+        padding: 0 128px;
+    }
+}
+
+.page-padding-narrow {
+    padding: 0 16px;
+    @media screen and (min-width: 789px) {
+        padding: 0 128px;
+    }
+    @media screen and (min-width: 1199px) {
+        padding: 0 256px;
+    }
+}
+
+.page-margin {
+    margin: 0 16px;
+    @media screen and (min-width: 789px) {
+        margin: 0 64px;
+    }
+    @media screen and (min-width: 1199px) {
+        margin: 0 128px;
+    }
+}
+
+.content-padding-large {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @media screen and (min-width: 789px) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+  }
+  @media screen and (min-width: 1199px) {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+  }
+}
+
+.content-padding-normal {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  @media screen and (min-width: 789px) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+  }
+  @media screen and (min-width: 1199px) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+  }
+
+}
+
+.cormorant-regular {
+  font-family: "Cormorant", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+}
+
+.inter-regular {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: regular;
+  font-style: normal;
+  line-height: 140%;
+}
+
+.inter-light {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: lighter;
+  font-style: normal;
+  line-height: 140%;
+}
+
+.dark-gray-font {
+  color: black
+}
+
+.orange {
+  color: var(--light-green)
+}
+
+.hide-on-mobile {
+  display: none !important;
+  @media only screen and (min-width: 789px) {
+    display: flex !important;
+  }
+}
+
+.hide-on-desktop {
+  display: none !important;
+  @media only screen and (max-width: 789px) {
+    display: flex !important;
+  }
+}
+
+a span {
+  text-wrap: balance;
+}
+
+.max-content-width {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-page-width {
+  width: 100vw;
+}
+
+

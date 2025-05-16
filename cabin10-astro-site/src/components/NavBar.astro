@@ -1,0 +1,176 @@
+---
+import { Icon } from "astro-icon/components";
+import LinkButton from "./LinkButton.astro";
+---
+
+<div id="navbar" class:list={["max-page-width"]}>
+  <div class:list={["content-container", "page-padding", "max-content-width"]}>
+    <div class:list={["logos-container"]}>
+      <a href="/">
+        <slot name="white-logo" />
+        <slot name="black-logo" />
+      </a>
+      <button id="hamburger">
+        <Icon name="white-hamburger" size={32} />
+      </button>
+    </div>
+    <nav class="nav">
+      <ul id="menu" class:list={["menu", "page-padding"]}>
+        <li>
+          <a href="/about" class="menu-item"> About </a>
+        </li>
+        <li>
+          <a href="/things-to-do" class="menu-item"> Things To Do </a>
+        </li>
+        <li>
+          <a href="/contact" class="menu-item"> Contact </a>
+        </li>
+        <li>
+          <a href="/blog" class="menu-item"> Blog </a>
+        </li>
+        <a class:list={["menu-item", "button"]}>
+          <LinkButton
+            hideOnDesktop={true}
+            link="https://checkout.lodgify.com/riversresortrentals/440616/reservation"
+            externalLink={true}
+            buttonStyle="secondary"
+          >
+            Book Now
+          </LinkButton>
+        </a>
+        <button id="close-button"> Close </button>
+      </ul>
+      <a class:list={["menu-item", "button"]}>
+        <LinkButton
+          hideOnMobile={true}
+          link="https://checkout.lodgify.com/riversresortrentals/440616/reservation"
+          externalLink={true}
+          buttonStyle="primary"
+        >
+          Book Now
+        </LinkButton>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const closeButton = document.getElementById("close-button");
+
+  if (closeButton) {
+    closeButton.addEventListener("click", () => {
+      closeMenu();
+    });
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      toggleMenu();
+    });
+  }
+
+  const toggleMenu = () => {
+    const menu = document.getElementById("menu");
+    if (menu) {
+      menu.classList.toggle("active");
+    }
+  };
+
+  const closeMenu = () => {
+    const menu = document.getElementById("menu");
+    if (menu) {
+      menu.classList.remove("active");
+    }
+  };
+</script>
+<style>
+  .content-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .logos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    padding-top: 80px;
+    padding-bottom: 8px;
+    z-index: 1000;
+    top: 0;
+    right: -800px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s ease;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+  }
+  .menu-item {
+    font-size: 2rem;
+    color: black;
+  }
+  .active {
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+  }
+
+  #tpd-horizontal-logo {
+    font-size: 2rem;
+  }
+
+  @media only screen and (min-width: 481px) {
+  }
+
+  @media only screen and (min-width: 789px) {
+    #tpd-horizontal-logo {
+      font-size: 4rem;
+    }
+    #hamburger {
+      display: none;
+    }
+    #close-button {
+      display: none;
+    }
+    .menu {
+      display: flex;
+      flex-direction: row;
+      position: static;
+      width: auto;
+      height: auto;
+      background-color: inherit;
+      padding: inherit;
+      gap: 1rem;
+    }
+    .menu-item {
+      font-size: 1rem;
+      color: white;
+    }
+
+    .button {
+      align-self: flex-end;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-end;
+      width: 100%;
+    }
+
+    .content-container {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      display: flex;
+      align-items: start;
+      gap: 16px;
+    }
+  }
+</style>

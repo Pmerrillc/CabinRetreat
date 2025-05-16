@@ -1,0 +1,26 @@
+---
+import { Picture, Image } from "astro:assets";
+import type { ImageSet } from "../types/image-set";
+
+const { mainImage, mediumImage, smallImage, photoDescription } =
+  Astro.props as ImageSet;
+
+const onlyMainImage = (mainImage && !mediumImage) || (mainImage && !smallImage);
+const fullSetExists = mediumImage && smallImage;
+---
+
+{
+  !onlyMainImage && fullSetExists ? (
+    <div>
+      <Picture
+        src={mainImage.asset.path}
+        sizes={`100%, (min-width: 600px) 100%, (min-width: 1200px) 100%`}
+        srcset={`${smallImage?.asset.path} 500w, ${mediumImage?.asset.path} 800w, ${mainImage.asset.path}`}
+        formats={["jpg"]}
+        alt={photoDescription}
+      />
+    </div>
+  ) : (
+    <Image src={mainImage.asset.path} alt={photoDescription} />
+  )
+}

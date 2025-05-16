@@ -1,0 +1,84 @@
+---
+import { type Hero } from "../types/component-types";
+import BookingForm from "./BookingForm.astro";
+
+const {
+  hero: { backgroundImage, heading, subheading },
+} = Astro.props as Hero;
+---
+
+<div class="max-page-width">
+  <div
+    class:list={[
+      "max-content-width",
+      "page-padding",
+      "main-container",
+      "content-padding-normal",
+    ]}
+  >
+    <h1 class:list={["cormorant-regular", "white-font"]}>
+      {heading}
+    </h1>
+    <h5 class:list={["inter-light", "white-font"]}>
+      {subheading}
+    </h5>
+    <span class:list={["button-container"]}>
+      <BookingForm />
+    </span>
+  </div>
+</div>
+<style>
+  .main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .white-font {
+    color: white;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+  }
+  @media only screen and (min-width: 789px) {
+    .main-container {
+      gap: 0px;
+      padding-right: 256px;
+    }
+
+    h1 {
+      line-height: 140%;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: 1199px) {
+    .main-container {
+      gap: auto;
+      padding-right: 512px;
+    }
+
+    h1 {
+      line-height: 140%;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      padding-top: 64px;
+      gap: 32px;
+      width: 100%;
+    }
+  }
+</style>

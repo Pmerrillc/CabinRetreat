@@ -1,0 +1,46 @@
+---
+import LinkButton from "./LinkButton.astro";
+---
+
+<div
+  class:list={["container", "page-padding-narrow", "content-padding-normal"]}
+>
+  <h2>Book a courier now</h2>
+  <h5>
+    With our service you’ll be able to get what you need. From the click of a
+    button, straight to your office within a day.
+  </h5>
+  <div class="button-container">
+    <LinkButton hideOnMobile={true} link="#work" buttonStyle="primary">
+      <span> Book a courier</span>
+    </LinkButton>
+    <LinkButton link="#contact" buttonStyle="secondary">
+      <span> Call us Today </span>
+    </LinkButton>
+  </div>
+</div>
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 789px) {
+    .container {
+      gap: 32px;
+    }
+
+    .button-container {
+      width: 100%;
+    }
+  }
+</style>

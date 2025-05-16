@@ -1,0 +1,24 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
+import icon from 'astro-icon';
+
+import sanity from '@sanity/astro';
+import react from '@astrojs/react';  
+
+// https://astro.build/config
+export default defineConfig({
+	site: 'https://example.com',
+	integrations: [
+		mdx(), 
+		sitemap(), 
+		icon(), 
+		sanity({
+			projectId: 'peyprqn8',
+			dataset: 'production',
+			// Set useCdn to false if you're building statically.
+			useCdn: false,
+			studioBasePath: "/admin",
+    }), react()],
+});

@@ -1,0 +1,60 @@
+---
+interface Props {
+  buttonStyle: string;
+  submitButton?: boolean;
+  fullWidth?: boolean;
+}
+const { buttonStyle, submitButton, fullWidth }: Props = Astro.props;
+
+const buttonWidth = fullWidth ? "full-width" : "content-width";
+
+const buttonType = submitButton
+  ? submitButton
+    ? "submit"
+    : "button"
+  : "button";
+---
+
+<button
+  type={buttonType}
+  class:list={["button", `${buttonStyle}-button`, buttonWidth]}
+>
+  <slot />
+</button>
+<style>
+  .button {
+    padding: 12px;
+    text-align: center;
+    width: max-content;
+    transition: background-color 0.2s ease;
+    transition: color 0.2s ease;
+  }
+  .button:hover {
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+  }
+
+  .primary-button {
+    background-color: var(--light-green);
+    color: black;
+    transition: background-color 0.2s ease;
+  }
+
+  .secondary-button {
+    background-color: var(--dark-green);
+    color: white;
+  }
+
+  .special-button {
+    background-color: white;
+    color: black;
+    border: 0.5px solid black;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+  .content-width {
+    width: max-content;
+  }
+</style>
