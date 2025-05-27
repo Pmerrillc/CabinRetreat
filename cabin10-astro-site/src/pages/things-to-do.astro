@@ -1,0 +1,106 @@
+---
+import type { ImageAsset } from "sanity";
+import { sanityClient } from "sanity:client";
+import { type ThingsToDoPage } from "../types/activities-page";
+
+import Layout from "../layouts/Layout.astro";
+import ImageText from "../components/ImageText.astro";
+import ImageTextBasic from "../components/ImageTextBasic.astro";
+import Contact from "../components/Contact.astro";
+import Map from "../components/Map.astro";
+import { Carousel } from "../react-components/Carousel.tsx";
+import Checklist from "../snippets/Checklist.astro";
+
+import urlFor from "../helpers/image-url-builder";
+
+import { ADDRESS } from "../consts";
+import CTASection from "../components/CTASection.astro";
+
+const data: ThingsToDoPage["data"] = await sanityClient.fetch(
+  `*[_type == "thingsToDoPage"]{
+  imageAndText->{
+    heading,
+    image{
+      asset->,
+      alt
+    },
+    text,
+    eyebrowText
+  },
+  secondImageAndText->{
+    heading,
+    image{
+      asset->,
+      alt
+    },
+    text,
+    eyebrowText
+  },
+  thirdImageAndText->{
+    heading,
+    image{
+      asset->,
+      alt
+    },
+    text,
+    eyebrowText
+  },
+  fourthImageAndText->{
+    heading,
+    image{
+      asset->,
+      alt
+    },
+    text,
+    eyebrowText
+  },
+  fifthImageAndText->{
+    heading,
+    image{
+      asset->,
+      alt
+    },
+    text,
+    eyebrowText
+  },
+}
+`
+);
+---
+
+<Layout title="About Me">
+  <section class="green-background">
+    <ImageText
+      imageAndText={data[0].imageAndText}
+      fullWidth={true}
+      switchAlignment={true}
+    />
+  </section>
+  <section>
+    <ImageTextBasic imageAndText={data[0].secondImageAndText} />
+  </section>
+  <section>
+    <ImageTextBasic
+      imageAndText={data[0].thirdImageAndText}
+      switchAlignment={true}
+    />
+  </section>
+  <section>
+    <ImageTextBasic imageAndText={data[0].fourthImageAndText} />
+  </section>
+  <section>
+    <ImageText
+      imageAndText={data[0].fifthImageAndText}
+      switchAlignment={true}
+      noButton={true}
+    />
+  </section>
+  <section>
+    <CTASection />
+  </section>
+  <style>
+    .green-background {
+      background-color: var(--light-green);
+    }
+  </style>
+</Layout>

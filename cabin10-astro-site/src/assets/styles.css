@@ -54,10 +54,11 @@ h5 {
 h6 {
   font-size: 1.125rem;
   line-height: 150%;
+  font-weight: 400;
 }
 
 p {
-  line-height: 150%;
+  line-height: 180%;
 }
 
 a, a:hover, a:active {
@@ -108,7 +109,7 @@ a, a:hover, a:active {
     @media screen and (min-width: 789px) {
         padding: 0 64px;
     }
-    @media screen and (min-width: 1199px) {
+    @media screen and (min-width: 1200px) {
         padding: 0 128px;
     }
 }
@@ -118,7 +119,7 @@ a, a:hover, a:active {
     @media screen and (min-width: 789px) {
         padding: 0 128px;
     }
-    @media screen and (min-width: 1199px) {
+    @media screen and (min-width: 1200px) {
         padding: 0 256px;
     }
 }
@@ -128,7 +129,7 @@ a, a:hover, a:active {
     @media screen and (min-width: 789px) {
         margin: 0 64px;
     }
-    @media screen and (min-width: 1199px) {
+    @media screen and (min-width: 1200px) {
         margin: 0 128px;
     }
 }
@@ -140,7 +141,7 @@ a, a:hover, a:active {
       padding-top: 6rem;
       padding-bottom: 6rem;
   }
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1200px) {
       padding-top: 8rem;
       padding-bottom: 8rem;
   }
@@ -153,7 +154,7 @@ a, a:hover, a:active {
       padding-top: 2rem;
       padding-bottom: 2rem;
   }
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1200px) {
       padding-top: 4rem;
       padding-bottom: 4rem;
   }
@@ -164,7 +165,8 @@ a, a:hover, a:active {
   font-family: "Cormorant", sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 140%;
+  line-height: 150%;
+  font-display: swap;
 }
 
 .inter-regular {
@@ -172,7 +174,8 @@ a, a:hover, a:active {
   font-optical-sizing: auto;
   font-weight: regular;
   font-style: normal;
-  line-height: 140%;
+  line-height: 150%;
+  font-display: swap;
 }
 
 .inter-light {
@@ -180,7 +183,8 @@ a, a:hover, a:active {
   font-optical-sizing: auto;
   font-weight: lighter;
   font-style: normal;
-  line-height: 140%;
+  line-height: 150%;
+  font-display: swap;
 }
 
 .dark-gray-font {
@@ -193,14 +197,14 @@ a, a:hover, a:active {
 
 .hide-on-mobile {
   display: none !important;
-  @media only screen and (min-width: 789px) {
+  @media only screen and (min-width: 1200px) {
     display: flex !important;
   }
 }
 
 .hide-on-desktop {
   display: none !important;
-  @media only screen and (max-width: 789px) {
+  @media only screen and (max-width: 1199px) {
     display: flex !important;
   }
 }

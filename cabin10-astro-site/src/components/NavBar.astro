@@ -1,6 +1,16 @@
 ---
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
+
+interface Props {
+  ligthBackground: boolean;
+}
+
+const { ligthBackground } = Astro.props;
+
+const textColor = ligthBackground ? "menu-item-black" : "menu-item-white";
+const hamburgerColour = ligthBackground ? "black" : "white";
+const buttonColour = ligthBackground ? "secondary" : "primary";
 ---
 
 <div id="navbar" class:list={["max-page-width"]}>
@@ -11,24 +21,24 @@ import LinkButton from "./LinkButton.astro";
         <slot name="black-logo" />
       </a>
       <button id="hamburger">
-        <Icon name="white-hamburger" size={32} />
+        <Icon name=`${hamburgerColour}-hamburger` size={32} />
       </button>
     </div>
     <nav class="nav">
       <ul id="menu" class:list={["menu", "page-padding"]}>
         <li>
-          <a href="/about" class="menu-item"> About </a>
+          <a href="/about" class=`${textColor}`> About </a>
         </li>
         <li>
-          <a href="/things-to-do" class="menu-item"> Things To Do </a>
+          <a href="/things-to-do" class=`${textColor}`> Things To Do </a>
         </li>
         <li>
-          <a href="/contact" class="menu-item"> Contact </a>
+          <a href="/contact-page" class=`${textColor}`> Contact </a>
         </li>
         <li>
-          <a href="/blog" class="menu-item"> Blog </a>
+          <a href="/blog" class=`${textColor}`> Blog </a>
         </li>
-        <a class:list={["menu-item", "button"]}>
+        <a class:list={[`${textColor}`, "button"]}>
           <LinkButton
             hideOnDesktop={true}
             link="https://checkout.lodgify.com/riversresortrentals/440616/reservation"
@@ -45,7 +55,7 @@ import LinkButton from "./LinkButton.astro";
           hideOnMobile={true}
           link="https://checkout.lodgify.com/riversresortrentals/440616/reservation"
           externalLink={true}
-          buttonStyle="primary"
+          buttonStyle={buttonColour}
         >
           Book Now
         </LinkButton>
@@ -149,9 +159,13 @@ import LinkButton from "./LinkButton.astro";
       padding: inherit;
       gap: 1rem;
     }
-    .menu-item {
+    .menu-item-white {
       font-size: 1rem;
       color: white;
+    }
+    .menu-item-black {
+      font-size: 1rem;
+      color: black;
     }
 
     .button {

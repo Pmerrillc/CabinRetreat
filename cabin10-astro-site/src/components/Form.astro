@@ -6,7 +6,7 @@ import Button from "./Button.astro";
 const currentDateString = new Date().toISOString().slice(0, 19);
 ---
 
-<div class:list={["page-padding", "content-padding-normal"]}>
+<div class:list={["container"]}>
   <form class="form">
     <span class:list={["form-item"]}>
       <label for="name"> Name </label>
@@ -24,78 +24,40 @@ const currentDateString = new Date().toISOString().slice(0, 19);
       <input
         class:list={["form-field"]}
         name="email"
-        type="text"
+        type="email"
         autocomplete="off"
         required
       />
     </span>
 
     <span class:list={["form-item"]}>
-      <label for="collection-time"> Collection Time </label>
-      <input
-        class:list={["form-field"]}
-        name="collection-time"
-        type="datetime-local"
-        min={currentDateString}
-        value={currentDateString}
-        required
-      />
-    </span>
-
-    <span class:list={["form-item"]}>
-      <label for="delivery-time"> Delivery Time </label>
-      <input
-        class:list={["form-field"]}
-        name="delivery-time"
-        type="datetime-local"
-        min={currentDateString}
-        value={currentDateString}
-        required
-      />
-    </span>
-
-    <span class:list={["form-item"]}>
-      <label for="vehicle"> Vehicle </label>
-      <input
-        class:list={["form-field"]}
-        name="vehicle"
-        type="text"
-        autocomplete="off"
-        required
-      />
-    </span>
-
-    <span class:list={["form-item"]}>
-      <label for="service"> Service </label>
-      <select class:list={["form-field"]} name="service" required>
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-    </span>
-
-    <span class:list={["form-item"]}>
-      <label for="special-instructions"> Special Instructions </label>
+      <label for="special-instructions"> Message </label>
       <textarea
-        class:list={["form-field"]}
+        class:list={["form-field", "text-area"]}
         name="special-instructions"
-        autocomplete="off"></textarea>
+        autocomplete="off"
+        required></textarea>
     </span>
 
     <span class:list={["button-field"]}>
-      <Button buttonStyle="primary" submitButton={true}> Book Today </Button>
+      <Button buttonStyle="secondary" submitButton={true} fullWidth={true}>
+        Send Message
+      </Button>
     </span>
   </form>
 </div>
 
 <style>
+  .container {
+    width: 100%;
+  }
   .form {
     display: flex;
     flex-direction: column;
     gap: 16px;
     border: solid 1px lightgray;
     padding: 16px;
+    width: 100%;
   }
 
   .form-item {
@@ -112,6 +74,11 @@ const currentDateString = new Date().toISOString().slice(0, 19);
   }
 
   .button-field {
+    width: 100%;
     align-self: center;
+  }
+
+  .text-area {
+    height: 256px;
   }
 </style>

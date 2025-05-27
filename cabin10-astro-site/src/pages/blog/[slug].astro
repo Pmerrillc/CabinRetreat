@@ -1,0 +1,141 @@
+---
+// ./src/pages/post/[slug].astro
+import type { SanityDocument } from "@sanity/client";
+import { type BlogPost } from "../../types/component-types";
+
+import Layout from "../../layouts/Layout.astro";
+import { loadQuery } from "../../sanity/lib/load-query";
+import urlFor from "../../helpers/image-url-builder";
+import { markdownProcessor } from "../../helpers/markdown-processor";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const { data: posts } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post"]`,
+  });
+
+  return posts.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current,
+      },
+    };
+  });
+}
+
+const { params } = Astro;
+const { data: post } = await loadQuery<BlogPost[]>({
+  query: `*[_type == "post" 
+  && slug.current == $slug]{
+  markdown,                   
+  title,
+  subheading,
+  author->,
+  publishedAt,
+  mainImage{alt,asset->},
+}
+`,
+  params,
+});
+
+const postData = post[0];
+
+const processor = markdownProcessor();
+const file2 = await processor.process(postData.markdown);
+
+const date = new Date(postData.publishedAt);
+
+const mainImageUrl = urlFor(postData.mainImage.asset._id).url();
+---
+
+<Layout title={postData.title}>
+  <div
+    class:list={[
+      "page-padding",
+      "max-content-width",
+      "main-container",
+      "content-padding-normal",
+    ]}
+  >
+    <div class="header-container">
+      <h2>{postData.title}</h2>
+      <p>{postData.subheading}</p>
+      <p class="eyebrow-text">
+        {date.toLocaleDateString("en-US", { dateStyle: "long" })}
+      </p>
+
+      <Image id="main-image" src={mainImageUrl} alt="inferSize" inferSize />
+    </div>
+
+    <div class="content-container">
+      <div class="content">
+        <Fragment class="markdown" set:html={String(file2)} />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 32px;
+  }
+
+  .content-container {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    overflow-x: hidden;
+    margin: auto;
+  }
+
+  .header-container,
+  #main-image {
+    width: 100%;
+    height: auto;
+  }
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .content p img {
+    display: none;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+      padding-top: 64px;
+    }
+
+    .header-container,
+    #main-image {
+      width: 80%;
+    }
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #main-image {
+      width: 100%;
+    }
+    .content {
+      width: 85%;
+      overflow-x: hidden;
+    }
+
+    .content-container {
+      width: 70%;
+    }
+  }
+</style>

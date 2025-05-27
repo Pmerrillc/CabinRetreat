@@ -2,29 +2,40 @@
 import LinkButton from "./LinkButton.astro";
 ---
 
-<div
-  class:list={["container", "page-padding-narrow", "content-padding-normal"]}
->
-  <h2>Book a courier now</h2>
-  <h5>
-    With our service you’ll be able to get what you need. From the click of a
-    button, straight to your office within a day.
-  </h5>
-  <div class="button-container">
-    <LinkButton hideOnMobile={true} link="#work" buttonStyle="primary">
-      <span> Book a courier</span>
-    </LinkButton>
-    <LinkButton link="#contact" buttonStyle="secondary">
-      <span> Call us Today </span>
-    </LinkButton>
+<div class:list={["max-page-width"]}>
+  <div
+    class:list={[
+      "content-container",
+      "page-padding-narrow",
+      "content-padding-normal",
+      "max-content-width",
+    ]}
+  >
+    <p class:list={["eyebrow-text"]}>
+      A Private Retreat in an Area Full of Adventure
+    </p>
+    <h2 class:list={["cormorant-regular"]}>
+      Book your mountain adventure today
+    </h2>
+    <h6>
+      Relax in the vintage charm and comfort of this river view mountain retreat
+      minutes from Pinecrest lake and Dodge Ridge. A family friendly vacation
+      location with something for everyone.
+    </h6>
+    <div class="button-container">
+      <LinkButton link="#work" buttonStyle="secondary">
+        <span> Book Today</span>
+      </LinkButton>
+    </div>
   </div>
 </div>
 <style>
-  .container {
+  .content-container {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 16px;
+    background-color: var(--light-green);
   }
 
   .button-container {
@@ -35,7 +46,7 @@ import LinkButton from "./LinkButton.astro";
   }
 
   @media screen and (min-width: 789px) {
-    .container {
+    .content-container {
       gap: 32px;
     }
 

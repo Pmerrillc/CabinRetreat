@@ -1,62 +1,120 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { sanityClient } from "../helpers/sanity-client";
+import { Icon } from "astro-icon/components";
+
+import { type HomePage } from "../types/home-page";
+
+import ImageText from "../components/ImageText.astro";
+import Hero from "../components/Hero.astro";
+import Checklist from "../snippets/Checklist.astro";
+import Map from "../components/Map.astro";
+import CTASection from "../components/CTASection.astro";
+import Contact from "../components/Contact.astro";
+
+import BareLayout from "../layouts/BareLayout.astro";
+
+import NavBar from "../components/NavBar.astro";
+
+import heroImageLarge from "../images/hero-image-large.webp";
+import heroImageMedium from "../images/hero-image-medium.webp";
+import heroImageSmall from "../images/hero-image-small.webp";
+
+const data: HomePage["data"] = await sanityClient.fetch(
+  `*[_type == "homepage"]{
+  hero->{
+    heading, 
+    subheading, 
+    },
+  imageAndText->{
+    image{alt, asset->},
+    heading,
+    text,
+    buttonText,
+    eyebrowText
+  },
+  secondImageAndText->{
+    image{alt, asset->},
+    heading,
+    text,
+    buttonText,
+    eyebrowText
+  },
+  contactImage{asset->, alt}
+}
+`
+);
+
+// Hero
+const hero = data[0].hero;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>🧑‍🚀 Hello, Astronaut!</h1>
-      <p>
-        Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-        template. This template serves as a lightweight, minimally-styled starting
-        point for anyone looking to build a personal website, blog, or portfolio
-        with Astro.
-      </p>
-      <p>
-        This template comes with a few integrations already configured in your
-        <code>astro.config.mjs</code> file. You can customize your setup with
-        <a href="https://astro.build/integrations">Astro Integrations</a> to add
-        tools like Tailwind, React, or Vue to your project.
-      </p>
-      <p>Here are a few ideas on how to get started with the template:</p>
-      <ul>
-        <li>Edit this page in <code>src/pages/index.astro</code></li>
-        <li>
-          Edit the site header items in <code>src/components/Header.astro</code>
-        </li>
-        <li>
-          Add your name to the footer in <code
-            >src/components/Footer.astro</code>
-        </li>
-        <li>
-          Check out the included blog posts in <code>src/content/blog/</code>
-        </li>
-        <li>
-          Customize the blog post page layout in <code
-            >src/layouts/BlogPost.astro</code>
-        </li>
-      </ul>
-      <p>
-        Have fun! If you get stuck, remember to
-        <a href="https://docs.astro.build/">read the docs</a>
-        or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-      </p>
-      <p>
-        Looking for a blog template with a bit more personality? Check out
-        <a href="https://github.com/Charca/astro-blog-template"
-          >astro-blog-template</a
-        >
-        by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-      </p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<BareLayout title="Home | Cabin10">
+  <div
+    style={`background-image: url("${heroImageLarge.src}");`}
+    class:list={["navhero"]}
+  >
+    <img
+      src={heroImageLarge.src}
+      alt=""
+      width="0"
+      height="0"
+      style="display: none !important;"
+    />
+    <section>
+      <NavBar ligthBackground={false}>
+        <Icon
+          slot="white-logo"
+          name="c10-normal-logo-white"
+          id="cabin10-logo"
+        />
+      </NavBar>
+    </section>
+    <section>
+      <Hero hero={data[0].hero} />
+    </section>
+  </div>
+  <section>
+    <ImageText imageAndText={data[0].imageAndText}>
+      <Checklist
+        slot="special-content"
+        textList={[
+          "Picturesque Views",
+          "Riverside Location",
+          "Heated Pool",
+          "Firepit",
+          "Stone Fireplace",
+          "Cozy Interior",
+        ]}
+      />
+    </ImageText>
+    <ImageText
+      imageAndText={data[0].secondImageAndText}
+      switchAlignment={true}
+    />
+  </section>
+  <section>
+    <CTASection />
+  </section>
+  <section>
+    <Contact contactImage={data[0].contactImage} />
+  </section>
+  <section>
+    <Map />
+  </section>
+</BareLayout>
+
+<style>
+  .navhero {
+    width: 100vw;
+  }
+
+  #cabin10-logo {
+    font-size: 1.5em;
+    @media only screen and (min-width: 481px) {
+      font-size: 2em;
+    }
+    @media only screen and (min-width: 789px) {
+      font-size: 3em;
+    }
+  }
+</style>

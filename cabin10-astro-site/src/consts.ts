@@ -3,3 +3,8 @@
 
 export const SITE_TITLE = 'Astro Blog';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
+
+export const AIRBNB_URL = "https://www.airbnb.com/slink/4wW5PCQ4"
+export const LODGIFY_URL = "https://www.airbnb.com/slink/4wW5PCQ4"
+
+export const ADDRESS = "Address 28635 Herring Creek Lane #10, Strawberry, CA 95375"

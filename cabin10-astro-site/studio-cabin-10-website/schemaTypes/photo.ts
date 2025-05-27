@@ -14,14 +14,6 @@ export const photoType = defineType({
       name: 'photoDescription',
       type: 'string',
       validation: (Rule) => Rule.required()
-    }),
-    defineField({
-      name: 'mediumImage',
-      type: 'image',
-    }),
-    defineField({
-      name: 'smallImage',
-      type: 'image',
-    }),
+    })
 ]
 })

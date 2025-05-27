@@ -14,11 +14,6 @@ export const heroType = defineType({
       name: 'subheading',
       type: 'string',
       validation: (Rule) => Rule.required()
-    }),
-    defineField({
-      name: 'backgroundImage',
-      type: 'reference',
-      to: [{type: "photo"}]
     })
 ]
 })

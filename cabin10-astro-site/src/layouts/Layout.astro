@@ -1,5 +1,6 @@
 ---
 import "../assets/styles.css";
+import { Icon } from "astro-icon/components";
 import Footer from "../components/Footer.astro";
 import NavBar from "../components/NavBar.astro";
 
@@ -23,19 +24,27 @@ const { title }: Props = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Canary Express Website" />
+    <meta name="description" content="Cabin 10 Website" />
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <section id="navbar">
-        <NavBar />
+    <main>
+      <header>
+        <section id="navbar">
+          <NavBar ligthBackground={true}>
+            <Icon
+              slot="black-logo"
+              name="c10-normal-logo-black"
+              id="cabin10-logo"
+            />
+          </NavBar>
+        </section>
+      </header>
+      <slot />
+      <section id="footer">
+        <Footer />
       </section>
-    </header>
-    <slot />
-    <section id="footer">
-      <Footer />
-    </section>
+    </main>
   </body>
 </html>
 
@@ -45,5 +54,15 @@ const { title }: Props = Astro.props;
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  #cabin10-logo {
+    font-size: 1.5em;
+    @media only screen and (min-width: 481px) {
+      font-size: 2em;
+    }
+    @media only screen and (min-width: 789px) {
+      font-size: 3em;
+    }
   }
 </style>

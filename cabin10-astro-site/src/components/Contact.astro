@@ -1,0 +1,117 @@
+---
+import type { ImageAsset } from "sanity";
+import { Image } from "astro:assets";
+import Form from "./Form.astro";
+
+import urlFor from "../helpers/image-url-builder";
+
+interface Props {
+  contactImage: { asset: ImageAsset };
+}
+
+const { contactImage } = Astro.props;
+
+const smallImage: string = urlFor(contactImage.asset._id).width(500).url();
+const largeImage: string = urlFor(contactImage.asset._id).width(900).url();
+---
+
+<div
+  class:list={[
+    "max-page-width",
+    "max-content-width",
+    "page-padding",
+    "outer-container",
+    "content-padding-normal",
+  ]}
+>
+  <div class="header-container">
+    <h3 class="cormorant-regular">Get in touch with us</h3>
+    <h6 class="inter-regular">
+      {
+        `Any questions you would like answered about the cabin? Please send us a
+      message.`
+      }
+    </h6>
+  </div>
+  <div class:list={["content-container"]}>
+    <div class:list={["input-container"]}>
+      <div class="form-container">
+        <Form />
+      </div>
+    </div>
+    <div class:list={["image-container"]}>
+      <div class="contact-info">
+        <div>
+          <p>Phone Number</p>
+          <p class="inter-light">408-858-5495</p>
+        </div>
+        <div class="contact-item">
+          <p>Email</p>
+          <p class="inter-light">strawberrycabin10@gmail.com</p>
+        </div>
+      </div>
+      <Image
+        src={largeImage}
+        srcset={`${smallImage} 500w, ${largeImage} 900w`}
+        sizes={"(max-width: 789px) 400px, 900px"}
+        alt={""}
+        inferSize={true}
+        class={"image"}
+      />
+    </div>
+  </div>
+</div>
+<style>
+  .outer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 32px;
+  }
+  .form-container {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  @media only screen and (min-width: 789px) {
+    .contact-info {
+      display: flex;
+      justify-content: space-between;
+    }
+    .header-container {
+      gap: 16px;
+    }
+    .outer-container {
+      gap: 32px;
+    }
+    .content-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 64px;
+    }
+    .input-container {
+      width: 50%;
+    }
+
+    .image-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+</style>

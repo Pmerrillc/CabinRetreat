@@ -1,39 +1,101 @@
 ---
 import { Image } from "astro:assets";
 import ImageSet from "../snippets/ImageSet.astro";
-import Button from "./Button.astro";
+import LinkButton from "./LinkButton.astro";
 
 import { type ImageText } from "../types/component-types";
-const {
-  text,
-  photo: { mainImage, mediumImage, smallImage, photoDescription },
-  eyebrowText,
-  heading,
-  buttonText,
-} = Astro.props as ImageText;
+const { imageAndText, switchAlignment, address, noButton } = Astro.props as {
+  imageAndText: ImageText;
+  switchAlignment: boolean;
+  address?: string;
+  fullWidth?: boolean;
+  noButton?: boolean;
+};
+
+const { eyebrowText, heading, text, image, buttonText } = imageAndText;
+const alignmentClass = switchAlignment ? "left-right" : "right-left";
 ---
 
-<div class="max-page-width">
+<div class:list={["max-page-width", "content-padding-normal"]}>
   <div class:list={["main-container", "page-padding", "max-content-width"]}>
     {
-      heading && (
-        <div class="header-container">
-          <h2 class:list={["inter-regular"]}>{heading}</h2>
+      eyebrowText && (
+        <div class:list={["eyebrow-container", "hide-on-desktop"]}>
+          <p class:list={["eyebrow-text"]}>{eyebrowText}</p>
         </div>
       )
     }
-    <div class:list={["content-container"]}>
+    {
+      heading && (
+        <div class:list={["header-container", "hide-on-desktop"]}>
+          <h2 class:list={["cormorant-regular"]}>{heading}</h2>
+        </div>
+      )
+    }
+    <div class:list={["content-container", `${alignmentClass}`]}>
       <div class:list={["text-container"]}>
-        {text}
+        {
+          eyebrowText && (
+            <div class:list={["eyebrow-container", "hide-on-mobile"]}>
+              <p class:list={["eyebrow-text"]}>{eyebrowText}</p>
+            </div>
+          )
+        }
+        {
+          heading && (
+            <div class:list={["header-container", "hide-on-mobile"]}>
+              <h2 class:list={["cormorant-regular"]}>{heading}</h2>
+            </div>
+          )
+        }
+
+        {address && <h5 class="">{address}</h5>}
+
+        <h6 class="">{text}</h6>
+
+        <slot name="special-content" />
+
+        {
+          !noButton && (
+            <div class:list={["button-container", "hide-on-mobile"]}>
+              {buttonText && (
+                <LinkButton buttonStyle="special" fullWidth={true}>
+                  {buttonText}
+                </LinkButton>
+              )}
+              <LinkButton
+                externalLink={true}
+                buttonStyle="secondary"
+                fullWidth={true}
+              >
+                Book Today
+              </LinkButton>
+            </div>
+          )
+        }
       </div>
       <div class:list={["image-container"]}>
-        <ImageSet mainImage={mainImage} photoDescription={photoDescription} />
+        <ImageSet image={image} />
       </div>
     </div>
-    <div class:list={["button-container"]}>
-      <Button buttonStyle="special"> {buttonText} </Button>
-      <Button buttonStyle="secondary"> Book Today </Button>
-    </div>
+    {
+      !noButton && (
+        <div class:list={["button-container", "hide-on-desktop"]}>
+          {buttonText && (
+            <LinkButton buttonStyle="special" fullWidth={true}>
+              {buttonText}
+            </LinkButton>
+          )}
+          <LinkButton
+            link="externalLink={true}"
+            buttonStyle="secondary"
+            fullWidth={true}
+          >
+            Book Today
+          </LinkButton>
+        </div>
+      )
+    }
   </div>
 </div>
 <style>
@@ -41,8 +103,6 @@ const {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding-top: 32px;
-    padding-bottom: 32px;
   }
 
   .content-container {
@@ -68,7 +128,8 @@ const {
   }
 
   .button-container {
-    margin: auto;
+    display: flex;
+    gap: 16px;
   }
 
   .image {
@@ -84,7 +145,6 @@ const {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    align-self: center;
   }
   .header-container h5 {
     font-weight: lighter;
@@ -97,22 +157,36 @@ const {
     }
 
     .image {
-      width: 540px;
-      height: 300px;
+      width: 100%;
+    }
+
+    .button-container {
+      padding-top: 32px;
     }
   }
 
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1200px) {
     .header-container {
       align-self: flex-start;
     }
 
     .content-container {
-      flex-direction: row;
       gap: 96px;
     }
 
+    .left-right {
+      flex-direction: row-reverse;
+    }
+    .right-left {
+      flex-direction: row;
+    }
+
     .text-container {
+      width: 50%;
+    }
+
+    .image-container {
+      width: 50%;
     }
   }
 </style>

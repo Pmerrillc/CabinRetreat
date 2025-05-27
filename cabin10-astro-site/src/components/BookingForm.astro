@@ -115,7 +115,7 @@ const todayDate = isoString.split("T")[0];
         window.location.href = checkoutUrl.toString();
       } catch (error) {
         console.error("Error redirecting to Lodgify checkout:", error);
-        messageEl.textContent = "Error during redirection";
+        messageEl!.textContent = "Error during redirection";
       }
     });
   });
@@ -135,7 +135,7 @@ const todayDate = isoString.split("T")[0];
 
   .form-field-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: none;
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 16px;
     grid-row-gap: 16px;
@@ -175,6 +175,19 @@ const todayDate = isoString.split("T")[0];
   #booking-form {
     width: 100%;
   }
+  @media only screen and (min-width: 481px) {
+    .form-field-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+
+      padding-bottom: 32px;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
 
   @media only screen and (min-width: 769px) {
     .booking-form {
@@ -190,7 +203,7 @@ const todayDate = isoString.split("T")[0];
     }
   }
 
-  @media only screen and (min-width: 1199px) {
+  @media only screen and (min-width: 1200px) {
     .form-field-container {
       display: flex;
       flex-direction: row;

@@ -1,0 +1,138 @@
+---
+import ImageSet from "../snippets/ImageSet.astro";
+
+import { type ImageText } from "../types/component-types";
+const { imageAndText, switchAlignment, address, fullWidth } = Astro.props as {
+  imageAndText: Pick<ImageText, "heading" | "text" | "image">;
+  switchAlignment: boolean;
+  address?: string;
+  fullWidth?: boolean;
+};
+
+const { heading, text, image } = imageAndText;
+const alignmentClass = switchAlignment ? "left-right" : "right-left";
+---
+
+<div class:list={["max-page-width", "content-padding-normal"]}>
+  <div class:list={["main-container", "page-padding", "max-content-width"]}>
+    {
+      heading && (
+        <div class:list={["header-container", "hide-on-desktop"]}>
+          <h2 class:list={["cormorant-regular"]}>{heading}</h2>
+        </div>
+      )
+    }
+    <div class:list={["content-container", `${alignmentClass}`]}>
+      <div class:list={["text-container"]}>
+        {
+          heading && (
+            <div class:list={["header-container", "hide-on-mobile"]}>
+              <h2 class:list={["cormorant-regular"]}>{heading}</h2>
+            </div>
+          )
+        }
+
+        {address && <h5 class="">{address}</h5>}
+
+        <h6 class="">{text}</h6>
+
+        <slot name="special-content" />
+      </div>
+      <div class:list={["image-container"]}>
+        <ImageSet image={image} />
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+    position: relative;
+  }
+
+  .image-container {
+    text-align: center;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-container,
+  .text-container {
+    gap: 24px;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .button {
+    align-self: end;
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .header-container h5 {
+    font-weight: lighter;
+  }
+
+  @media screen and (min-width: 789px) {
+    .main-container,
+    .text-container {
+      gap: 16px;
+    }
+
+    .image {
+      width: 100%;
+    }
+
+    .button-container {
+      padding-top: 32px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .header-container {
+      align-self: flex-start;
+    }
+
+    .content-container {
+      gap: 96px;
+    }
+
+    .left-right {
+      flex-direction: row-reverse;
+    }
+    .right-left {
+      flex-direction: row;
+    }
+
+    .text-container {
+      width: 50%;
+    }
+
+    .image-container {
+      width: 50%;
+    }
+  }
+</style>

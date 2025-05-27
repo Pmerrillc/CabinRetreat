@@ -6,9 +6,21 @@ export const imageAndTextType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'photo',
-      type: 'reference',
-      to: [{type: "photo"}],
+      name: 'heading',
+      type: 'string',
+      validation: (Rule) => Rule.required()
+    }),
+    defineField({
+      name: 'image',
+      type: 'image',
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+          validation: (Rule) => Rule.required()
+        },
+      ],
       validation: (Rule) => Rule.required()
     }),
     defineField({
@@ -18,11 +30,6 @@ export const imageAndTextType = defineType({
     }),
     defineField({
       name: 'buttonText',
-      type: 'string',
-      validation: (Rule) => Rule.required()
-    }),
-    defineField({
-      name: 'heading',
       type: 'string',
     }),
     defineField({

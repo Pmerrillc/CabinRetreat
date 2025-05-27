@@ -1,0 +1,77 @@
+---
+import { getCollection } from "astro:content";
+
+import { type BlogPost } from "../types/component-types";
+
+import urlFor from "../helpers/image-url-builder";
+import { loadQuery } from "../sanity/lib/load-query";
+import { Image } from "astro:assets";
+
+interface Props {
+  blogPosts: BlogPost[];
+}
+
+const { blogPosts }: Props = Astro.props;
+---
+
+<div
+  class:list={[
+    "max-page-width",
+    "max-content-width",
+    "page-padding",
+    "content-padding-normal",
+  ]}
+>
+  <ul class="blogs-container">
+    {
+      blogPosts.map((post) => {
+        const mainImageUrl = urlFor(post.mainImage.asset._id)
+          .width(600)
+          .format("webp")
+          .url();
+        const date = new Date(post.publishedAt).toLocaleDateString("en-US", {
+          dateStyle: "long",
+        });
+
+        return (
+          <li class:list={["blog-thumbnail"]}>
+            <a href={`/blog/${post.slug.current}`}>
+              <Image
+                class="blog-image"
+                src={mainImageUrl}
+                alt="inferSize"
+                inferSize
+              />
+
+              <h6>{post.title}</h6>
+              <p>{date}</p>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+<style>
+  .blogs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .blog-image {
+    width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (min-width: 789px) {
+    .blogs-container {
+      flex-direction: row;
+      gap: 32px;
+    }
+
+    .blog-thumbnail {
+      width: 50%;
+    }
+  }
+</style>
