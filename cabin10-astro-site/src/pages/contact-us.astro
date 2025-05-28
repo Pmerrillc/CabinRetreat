@@ -1,17 +1,12 @@
 ---
-import type { ImageAsset } from "sanity";
 import { sanityClient } from "sanity:client";
 
 import { type ContactPage } from "../types/contact-page";
 
 import Layout from "../layouts/Layout.astro";
-import ImageText from "../components/ImageText.astro";
 import ImageTextBasic from "../components/ImageTextBasic.astro";
 import Contact from "../components/Contact.astro";
 import Map from "../components/Map.astro";
-import Checklist from "../snippets/Checklist.astro";
-
-import urlFor from "../helpers/image-url-builder";
 
 import { ADDRESS } from "../consts";
 
@@ -39,7 +34,7 @@ const data: ContactPage["data"] = await sanityClient.fetch(
   <section class="green-background">
     <ImageTextBasic imageAndText={data[0].imageAndText} switchAlignment={true}>
       <div slot="special-content">
-        <h6>Address</h6>
+        <h6 style="font-weight: bold">Address</h6>
         <h6 class="inter-regular">
           {ADDRESS}
         </h6>

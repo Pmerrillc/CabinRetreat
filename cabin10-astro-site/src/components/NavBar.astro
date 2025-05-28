@@ -2,6 +2,8 @@
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
 
+import { LODGIFY_URL } from "../consts";
+
 interface Props {
   ligthBackground: boolean;
 }
@@ -33,7 +35,7 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
           <a href="/things-to-do" class=`${textColor}`> Things To Do </a>
         </li>
         <li>
-          <a href="/contact-page" class=`${textColor}`> Contact </a>
+          <a href="/contact-us" class=`${textColor}`> Contact Us </a>
         </li>
         <li>
           <a href="/blog" class=`${textColor}`> Blog </a>
@@ -41,7 +43,7 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
         <a class:list={[`${textColor}`, "button"]}>
           <LinkButton
             hideOnDesktop={true}
-            link="https://checkout.lodgify.com/riversresortrentals/440616/reservation"
+            link={LODGIFY_URL}
             externalLink={true}
             buttonStyle="secondary"
           >
@@ -53,7 +55,7 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
       <a class:list={["menu-item", "button"]}>
         <LinkButton
           hideOnMobile={true}
-          link="https://checkout.lodgify.com/riversresortrentals/440616/reservation"
+          link={LODGIFY_URL}
           externalLink={true}
           buttonStyle={buttonColour}
         >
@@ -112,7 +114,7 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
     z-index: 1000;
     top: 0;
     right: -800px;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: fixed;
     display: flex;
@@ -127,7 +129,7 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
     color: black;
   }
   .active {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     right: 0;
   }

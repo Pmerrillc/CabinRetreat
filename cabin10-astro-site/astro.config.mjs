@@ -9,7 +9,6 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
 	image: {domains: ["cdn.sanity.io"]},
 	integrations: [
 		mdx(), 
@@ -21,5 +20,6 @@ export default defineConfig({
 			// Set useCdn to false if you're building statically.
 			useCdn: false,
 			studioBasePath: "/admin",
-    }), react()],
+    }), 
+	react()],
 });

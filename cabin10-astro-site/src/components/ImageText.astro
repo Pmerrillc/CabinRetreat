@@ -1,16 +1,18 @@
 ---
-import { Image } from "astro:assets";
 import ImageSet from "../snippets/ImageSet.astro";
 import LinkButton from "./LinkButton.astro";
+import { LODGIFY_URL } from "../consts";
 
 import { type ImageText } from "../types/component-types";
-const { imageAndText, switchAlignment, address, noButton } = Astro.props as {
-  imageAndText: ImageText;
-  switchAlignment: boolean;
-  address?: string;
-  fullWidth?: boolean;
-  noButton?: boolean;
-};
+const { imageAndText, switchAlignment, address, noButton, buttonLink } =
+  Astro.props as {
+    imageAndText: ImageText;
+    switchAlignment?: boolean;
+    buttonLink?: string;
+    address?: string;
+    fullWidth?: boolean;
+    noButton?: boolean;
+  };
 
 const { eyebrowText, heading, text, image, buttonText } = imageAndText;
 const alignmentClass = switchAlignment ? "left-right" : "right-left";
@@ -58,8 +60,13 @@ const alignmentClass = switchAlignment ? "left-right" : "right-left";
         {
           !noButton && (
             <div class:list={["button-container", "hide-on-mobile"]}>
-              {buttonText && (
-                <LinkButton buttonStyle="special" fullWidth={true}>
+              {buttonText && buttonLink && (
+                <LinkButton
+                  externalLink={false}
+                  link={buttonLink}
+                  buttonStyle="special"
+                  fullWidth={true}
+                >
                   {buttonText}
                 </LinkButton>
               )}
@@ -67,6 +74,7 @@ const alignmentClass = switchAlignment ? "left-right" : "right-left";
                 externalLink={true}
                 buttonStyle="secondary"
                 fullWidth={true}
+                link={LODGIFY_URL}
               >
                 Book Today
               </LinkButton>
@@ -81,15 +89,21 @@ const alignmentClass = switchAlignment ? "left-right" : "right-left";
     {
       !noButton && (
         <div class:list={["button-container", "hide-on-desktop"]}>
-          {buttonText && (
-            <LinkButton buttonStyle="special" fullWidth={true}>
+          {buttonText && buttonLink && (
+            <LinkButton
+              externalLink={false}
+              link={buttonLink}
+              buttonStyle="special"
+              fullWidth={true}
+            >
               {buttonText}
             </LinkButton>
           )}
           <LinkButton
-            link="externalLink={true}"
+            externalLink={true}
             buttonStyle="secondary"
             fullWidth={true}
+            link={LODGIFY_URL}
           >
             Book Today
           </LinkButton>
@@ -133,8 +147,7 @@ const alignmentClass = switchAlignment ? "left-right" : "right-left";
   }
 
   .image {
-    width: 200px;
-    height: 200px;
+    max-width: 100%;
   }
 
   .button {

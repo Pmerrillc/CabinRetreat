@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
+
+import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
 ---
 
 <div class:list={["max-page-width", "main-container"]}>
@@ -19,12 +21,16 @@ import LinkButton from "./LinkButton.astro";
         <div class:list={["sub-container", "links-container"]}>
           <a href="/">Home</a>
           <a href="/about">About</a>
-          <a href="/contact">Contact Us</a>
-          <a href="/services">Things to do</a>
-          <a href="/services">Blog</a>
+          <a href="/contact-page">Contact Us</a>
+          <a href="/things-to-do">Things to do</a>
+          <a href="/blog">Blog</a>
         </div>
         <div class="button-container">
-          <LinkButton link="#contact" buttonStyle="primary">
+          <LinkButton
+            externalLink={true}
+            link={LODGIFY_URL}
+            buttonStyle="primary"
+          >
             Book Today
           </LinkButton>
           <div>
@@ -48,19 +54,32 @@ import LinkButton from "./LinkButton.astro";
             </div>
             <div class:list={["logos-container"]}>
               <div class:list={["logo-container"]}>
-                <a href="https://linkedin.com/in/dylan-botuli-42a711141">
+                <a href="/contact-page">
                   <Icon class:list={["contact-logo"]} name="phone" id="" /></a
                 >
                 <p class="eyebrow-text">Call Us Today</p>
               </div>
               <div class:list={["logo-container"]}>
-                <a class="eyebrow-text" href="mailto: info@canaryeg.com"
+                <a
+                  class="eyebrow-text"
+                  href="mailto: strawberrycabin10@gmail.com"
                   ><Icon class:list={["contact-logo"]} name="mail" id="" />
                 </a>
                 <a
                   class="eyebrow-text"
                   href="mailto: strawberrycabin10@gmail.com"
                   >strawberrycabin10@gmail.com</a
+                >
+              </div>
+              <div class:list={["logo-container"]}>
+                <a class="eyebrow-text" href={FACEBOOK_URL}
+                  ><Icon class:list={["contact-logo"]} name="fb-icon" id="" />
+                </a>
+                <a
+                  class="eyebrow-text"
+                  href="https://www.facebook.com/riversresortcabin10?mibextid=LQQJ4d"
+                  target="_blank"
+                  rel="noopener noreferrer">Connect with us!</a
                 >
               </div>
             </div>
@@ -139,7 +158,7 @@ import LinkButton from "./LinkButton.astro";
       }
 
       .contact-logo {
-        font-size: 2em;
+        font-size: 1.5em;
       }
 
       .upper-container {
@@ -159,7 +178,7 @@ import LinkButton from "./LinkButton.astro";
         }
 
         .contact-logo {
-          font-size: 3em;
+          font-size: 2em;
         }
 
         .logos-container {

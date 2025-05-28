@@ -1,9 +1,9 @@
 ---
 import type { ImageAsset } from "sanity";
 import { Image } from "astro:assets";
-import Form from "./Form.astro";
 
 import urlFor from "../helpers/image-url-builder";
+import ContactForm from "../react-components/ContactForm";
 
 interface Props {
   contactImage: { asset: ImageAsset };
@@ -36,7 +36,7 @@ const largeImage: string = urlFor(contactImage.asset._id).width(900).url();
   <div class:list={["content-container"]}>
     <div class:list={["input-container"]}>
       <div class="form-container">
-        <Form />
+        <ContactForm client:load />
       </div>
     </div>
     <div class:list={["image-container"]}>

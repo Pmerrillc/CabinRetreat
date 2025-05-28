@@ -53,13 +53,6 @@ const hero = data[0].hero;
     style={`background-image: url("${heroImageLarge.src}");`}
     class:list={["navhero"]}
   >
-    <img
-      src={heroImageLarge.src}
-      alt=""
-      width="0"
-      height="0"
-      style="display: none !important;"
-    />
     <section>
       <NavBar ligthBackground={false}>
         <Icon
@@ -74,7 +67,7 @@ const hero = data[0].hero;
     </section>
   </div>
   <section>
-    <ImageText imageAndText={data[0].imageAndText}>
+    <ImageText buttonLink={"/about"} imageAndText={data[0].imageAndText}>
       <Checklist
         slot="special-content"
         textList={[
@@ -87,9 +80,12 @@ const hero = data[0].hero;
         ]}
       />
     </ImageText>
+  </section>
+  <section>
     <ImageText
       imageAndText={data[0].secondImageAndText}
       switchAlignment={true}
+      buttonLink="/things-to-do"
     />
   </section>
   <section>
@@ -104,10 +100,6 @@ const hero = data[0].hero;
 </BareLayout>
 
 <style>
-  .navhero {
-    width: 100vw;
-  }
-
   #cabin10-logo {
     font-size: 1.5em;
     @media only screen and (min-width: 481px) {

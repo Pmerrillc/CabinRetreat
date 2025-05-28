@@ -17,10 +17,11 @@ button {
     font: inherit;
 }
 
-*,
-*::before,
-*::after {
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 ul[role='list'],
@@ -221,6 +222,7 @@ a span {
 
 .max-page-width {
   width: 100vw;
+  max-width: 100%;
 }
 
 

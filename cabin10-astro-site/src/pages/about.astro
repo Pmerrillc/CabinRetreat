@@ -5,7 +5,6 @@ import { type AboutPage } from "../types/about";
 
 import Layout from "../layouts/Layout.astro";
 import ImageText from "../components/ImageText.astro";
-import ImageTextFullWidth from "../components/ImageTextFullWidth.astro";
 import Contact from "../components/Contact.astro";
 import Map from "../components/Map.astro";
 import { Carousel } from "../react-components/Carousel.tsx";
@@ -13,7 +12,7 @@ import Checklist from "../snippets/Checklist.astro";
 
 import urlFor from "../helpers/image-url-builder";
 
-import { ADDRESS } from "../consts";
+import { ADDRESS, LODGIFY_URL_DESCRIPTION } from "../consts";
 
 const data: AboutPage["data"] = await sanityClient.fetch(
   `*[_type == "aboutPage"]{
@@ -81,6 +80,7 @@ const images = data[0].carouselImages.images.map((image) => {
       address={ADDRESS}
       fullWidth={true}
       switchAlignment={true}
+      buttonLink={LODGIFY_URL_DESCRIPTION}
     >
       <Checklist
         slot="special-content"
@@ -102,6 +102,7 @@ const images = data[0].carouselImages.images.map((image) => {
     <ImageText
       imageAndText={data[0].thirdImageAndText}
       switchAlignment={true}
+      buttonLink={"/things-to-do"}
     />
   </section>
   <section>

@@ -1,0 +1,58 @@
+.container {
+width: 100%;
+}
+.form {
+display: flex;
+flex-direction: column;
+gap: 16px;
+border: solid 1px lightgray;
+padding: 16px;
+width: 100%;
+}
+
+.formItem {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.formField {
+border: 1px solid lightgray;
+font-family: sans-serif;
+line-height: 140%;
+padding: 4px;
+}
+
+.buttonField {
+width: 100%;
+align-self: center;
+}
+
+.textArea {
+height: 256px;
+max-width: 100%;
+}
+
+  .button {
+    padding: 12px;
+    text-align: center;
+    width: max-content;
+    transition: background-color 0.2s ease;
+    transition: color 0.2s ease;
+  }
+  .button:hover {
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+  }
+
+  .secondaryButton {
+    background-color: var(--dark-green);
+    color: white;
+  }
+
+  .fullWidth {
+    width: 100%;
+  }
+  .content-width {
+    width: max-content;
+  }

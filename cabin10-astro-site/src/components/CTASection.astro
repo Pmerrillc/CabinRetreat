@@ -1,5 +1,6 @@
 ---
 import LinkButton from "./LinkButton.astro";
+import { LODGIFY_URL } from "../consts";
 ---
 
 <div class:list={["max-page-width"]}>
@@ -23,7 +24,11 @@ import LinkButton from "./LinkButton.astro";
       location with something for everyone.
     </h6>
     <div class="button-container">
-      <LinkButton link="#work" buttonStyle="secondary">
+      <LinkButton
+        externalLink={true}
+        link={LODGIFY_URL}
+        buttonStyle="secondary"
+      >
         <span> Book Today</span>
       </LinkButton>
     </div>
