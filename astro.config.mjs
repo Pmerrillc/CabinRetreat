@@ -5,21 +5,27 @@ import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 
 import sanity from '@sanity/astro';
-import react from '@astrojs/react';  
+import react from '@astrojs/react';
+
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-	image: {domains: ["cdn.sanity.io"]},
-	integrations: [
-		mdx(), 
-		sitemap(), 
-		icon(), 
-		sanity({
-			projectId: 'peyprqn8',
-			dataset: 'production',
-			// Set useCdn to false if you're building statically.
-			useCdn: false,
-			studioBasePath: "/admin",
-    }), 
+  output: "server",
+  image: {domains: ["cdn.sanity.io"]},
+
+  integrations: [
+      mdx(), 
+      sitemap(), 
+      icon(), 
+      sanity({
+          projectId: 'peyprqn8',
+          dataset: 'production',
+          // Set useCdn to false if you're building statically.
+          useCdn: false,
+          studioBasePath: "/admin",
+  }), 
 	react()],
+
+  adapter: vercel(),
 });

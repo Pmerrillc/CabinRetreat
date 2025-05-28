@@ -16,8 +16,6 @@ import BareLayout from "../layouts/BareLayout.astro";
 import NavBar from "../components/NavBar.astro";
 
 import heroImageLarge from "../images/hero-image-large.webp";
-import heroImageMedium from "../images/hero-image-medium.webp";
-import heroImageSmall from "../images/hero-image-small.webp";
 
 const data: HomePage["data"] = await sanityClient.fetch(
   `*[_type == "homepage"]{

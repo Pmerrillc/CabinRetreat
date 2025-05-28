@@ -13,6 +13,7 @@
     "@astrojs/react": "^4.2.7",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/vercel": "^8.1.4",
     "@emailjs/browser": "^4.4.1",
     "@portabletext/types": "^2.0.13",
     "@sanity/astro": "^3.2.6",

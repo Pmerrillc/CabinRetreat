@@ -9,6 +9,8 @@ import urlFor from "../../helpers/image-url-builder";
 import { markdownProcessor } from "../../helpers/markdown-processor";
 import { Image } from "astro:assets";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
     query: `*[_type == "post"]`,
