@@ -1,7 +1,7 @@
 ---
 import type { ImageAsset } from "sanity";
 import { sanityClient } from "sanity:client";
-import { type AboutPage } from "../types/about";
+import { type AboutPage } from "../types/about.ts";
 
 import Layout from "../layouts/Layout.astro";
 import ImageText from "../components/ImageText.astro";
@@ -10,9 +10,9 @@ import Map from "../components/Map.astro";
 import { Carousel } from "../react-components/Carousel.tsx";
 import Checklist from "../snippets/Checklist.astro";
 
-import urlFor from "../helpers/image-url-builder";
+import urlFor from "../helpers/image-url-builder.ts";
 
-import { ADDRESS, LODGIFY_URL_DESCRIPTION } from "../consts";
+import { ADDRESS, LODGIFY_URL_DESCRIPTION } from "../consts.ts";
 
 const data: AboutPage["data"] = await sanityClient.fetch(
   `*[_type == "aboutPage"]{

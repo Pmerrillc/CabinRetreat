@@ -1,5 +1,5 @@
 import { type ImageAsset } from "sanity";
-import { type Hero, type ImageText } from "../types/component-types";
+import { type Hero, type ImageText } from "./component-types";
 
 interface ValidComponents {
     hero: Hero;

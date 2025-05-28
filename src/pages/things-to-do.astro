@@ -1,7 +1,7 @@
 ---
 import type { ImageAsset } from "sanity";
 import { sanityClient } from "sanity:client";
-import { type ThingsToDoPage } from "../types/activities-page";
+import { type ThingsToDoPage } from "../types/activities-page.ts";
 
 import Layout from "../layouts/Layout.astro";
 import ImageText from "../components/ImageText.astro";
@@ -11,9 +11,9 @@ import Map from "../components/Map.astro";
 import { Carousel } from "../react-components/Carousel.tsx";
 import Checklist from "../snippets/Checklist.astro";
 
-import urlFor from "../helpers/image-url-builder";
+import urlFor from "../helpers/image-url-builder.ts";
 
-import { ADDRESS } from "../consts";
+import { ADDRESS } from "../consts.ts";
 import CTASection from "../components/CTASection.astro";
 
 const data: ThingsToDoPage["data"] = await sanityClient.fetch(
