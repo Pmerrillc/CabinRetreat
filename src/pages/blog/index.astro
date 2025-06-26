@@ -17,10 +17,10 @@ const { data: blogPosts } = await loadQuery<BlogPost[]>({
 });
 ---
 
-<head>
-  <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
-</head>
-<Layout title={"Cabin 10 Blog"}>
+<Layout
+  title={"Cabin 10| Cabin 10 Blog"}
+  description="Discover the latest about Cabin 10, Strawberry and Pinecrest Lake."
+>
   <div class:list={[]}>
     <section>
       <BlogContainer blogPosts={blogPosts} />

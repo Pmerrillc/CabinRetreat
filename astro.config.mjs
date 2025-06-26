@@ -13,7 +13,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   output: "server",
   image: {domains: ["cdn.sanity.io"]},
-
+  site: 'https://www.cabin10.com',
   integrations: [
       mdx(), 
       sitemap(), 

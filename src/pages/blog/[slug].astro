@@ -50,7 +50,7 @@ const date = new Date(postData.publishedAt);
 const mainImageUrl = urlFor(postData.mainImage.asset._id).url();
 ---
 
-<Layout title={postData.title}>
+<Layout title={postData.title} description={postData.subheading}>
   <div
     class:list={[
       "page-padding",

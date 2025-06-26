@@ -68,7 +68,10 @@ const data: ThingsToDoPage["data"] = await sanityClient.fetch(
 );
 ---
 
-<Layout title="About Me">
+<Layout
+  title="Cabin 10 | Things to do in Strawberry CA"
+  description="learn about activities you can enjoy in and around Cabin 10, Strawberry CA, and near Pinecrest Lake."
+>
   <section class="green-background">
     <ImageText
       imageAndText={data[0].imageAndText}

@@ -1,0 +1,31 @@
+---
+import BareLayout from "../layouts/BareLayout.astro";
+import LinkButton from "../components/LinkButton.astro";
+---
+
+<BareLayout title="404 page" description="This page does not exist.">
+  <div class:list={["page-padding", "container"]}>
+    <h1>404</h1>
+    <h3>Sorry this page doesnt exist</h3>
+    <h3>
+      The page you're looking for does not exist. Please go back or head to the <a
+        href="/">home page</a
+      >.
+    </h3>
+    <LinkButton link="/" buttonStyle="secondary" externalLink={false}>
+      Home
+    </LinkButton>
+  </div>
+</BareLayout>
+
+<style>
+  .container {
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+</style>

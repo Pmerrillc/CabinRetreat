@@ -225,4 +225,8 @@ a span {
   max-width: 100%;
 }
 
+  .block-bots {
+    display: none;
+  }
+
 

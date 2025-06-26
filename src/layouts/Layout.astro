@@ -6,9 +6,10 @@ import NavBar from "../components/NavBar.astro";
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title }: Props = Astro.props;
+const { title, description }: Props = Astro.props;
 ---
 
 <!doctype html>
@@ -20,11 +21,12 @@ const { title }: Props = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Cabin 10 Website" />
+    <meta name="description" content={description} />
     <title>{title}</title>
   </head>
   <body>

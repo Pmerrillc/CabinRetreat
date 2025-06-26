@@ -1,5 +1,9 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { 
+    EMAILJS_PUBLIC_KEY, 
+    EMAILJS_PRIVATE_KEY, 
+} from '../consts';
 
 import styles from "./ContactForm.module.css"
 
@@ -9,10 +13,15 @@ const ContactForm = () => {
     const sendEmail = (e) => {
         e.preventDefault();
         
-        emailjs.sendForm('service_jwqyjvs', 'template_sl12c4f', form.current, 'RpifWbH2AngTMolk3')
+        emailjs.sendForm('service_jwqyjvs', 'template_sl12c4f', form.current, {
+            publicKey: EMAILJS_PUBLIC_KEY,
+            privateKey: EMAILJS_PRIVATE_KEY,
+        })
         .then(
             (result) => {
                 console.log('SUCCESS!', result.text);
+                console.log(EMAILJS_PRIVATE_KEY)
+                console.log(EMAILJS_PUBLIC_KEY,)
                 form.current.reset();
                 alert("We'll get back to you shortly.");  
             },

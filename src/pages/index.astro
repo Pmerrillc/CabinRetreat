@@ -10,6 +10,7 @@ import Checklist from "../snippets/Checklist.astro";
 import Map from "../components/Map.astro";
 import CTASection from "../components/CTASection.astro";
 import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
 import BareLayout from "../layouts/BareLayout.astro";
 
@@ -46,7 +47,10 @@ const data: HomePage["data"] = await sanityClient.fetch(
 const hero = data[0].hero;
 ---
 
-<BareLayout title="Home | Cabin10">
+<BareLayout
+  title="Cabin 10 | Cabin Rental in Strawberry CA"
+  description="Home page for Cabin 10, a cabin rental property in Strawberry, California close to Pinecrest Lake"
+>
   <div
     style={`background-image: url("${heroImageLarge.src}");`}
     class:list={["navhero"]}
@@ -94,6 +98,9 @@ const hero = data[0].hero;
   </section>
   <section>
     <Map />
+  </section>
+  <section id="footer">
+    <Footer />
   </section>
 </BareLayout>
 

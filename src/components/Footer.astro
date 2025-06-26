@@ -54,7 +54,7 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
             </div>
             <div class:list={["logos-container"]}>
               <div class:list={["logo-container"]}>
-                <a href="/contact-page">
+                <a href="/contact-us">
                   <Icon class:list={["contact-logo"]} name="phone" id="" /></a
                 >
                 <p class="eyebrow-text">Call Us Today</p>
@@ -68,16 +68,23 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
                 <a
                   class="eyebrow-text"
                   href="mailto: strawberrycabin10@gmail.com"
-                  >strawberrycabin10@gmail.com</a
+                  >strawberrycabin10@gmail.com <span
+                    class="block-bots"
+                    aria-hidden="true">GO AWAY SPAM BOTS!</span
+                  ></a
                 >
               </div>
               <div class:list={["logo-container"]}>
-                <a class="eyebrow-text" href={FACEBOOK_URL}
+                <a
+                  class="eyebrow-text"
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><Icon class:list={["contact-logo"]} name="fb-icon" id="" />
                 </a>
                 <a
                   class="eyebrow-text"
-                  href="https://www.facebook.com/riversresortcabin10?mibextid=LQQJ4d"
+                  href={FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer">Connect with us!</a
                 >
@@ -85,7 +92,9 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
             </div>
           </div>
           <div class:list={["sub-container", "footnote-sub-container"]}>
-            <p class:list={["eyebrow-text"]}>Privacy Policy | Cookie Policy</p>
+            <p class:list={["eyebrow-text"]}>
+              <a href="/privacy-policy">Privacy Policy </a>
+            </p>
             <p class:list={["eyebrow-text"]}>Copyright © 2025</p>
           </div>
         </div>

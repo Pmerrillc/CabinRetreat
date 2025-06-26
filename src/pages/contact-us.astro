@@ -30,7 +30,10 @@ const data: ContactPage["data"] = await sanityClient.fetch(
 );
 ---
 
-<Layout title="About Me">
+<Layout
+  title="Cabin 10 | Contact Us"
+  description="Contact us for more information about our cabin rental property."
+>
   <section class="green-background">
     <ImageTextBasic imageAndText={data[0].imageAndText} switchAlignment={true}>
       <div slot="special-content">
