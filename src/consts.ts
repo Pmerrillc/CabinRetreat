@@ -13,7 +13,7 @@ export const EMAIL_JS_SERVICE_NAME = "service_juj62r5"
 export const EMAIL_JS_TEMPLATE_NAME = "template_ax9hgid"
 export const EMAIL_JS_PUB_KEY = "qsATR5J73Yynuy4_e"
 
-export const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY 
-export const EMAILJS_PRIVATE_KEY = process.env.EMAILJS_PRIVATE_KEY 
+export const EMAILJS_PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY || "WHAT"
+export const EMAILJS_PRIVATE_KEY = import.meta.env.PUBLIC_EMAILJS_PRIVATE_KEY || "WHAT"
 
 export const ADDRESS = "28635 Herring Creek Lane #10, Strawberry, CA 95375"

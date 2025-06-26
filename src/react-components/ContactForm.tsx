@@ -20,8 +20,6 @@ const ContactForm = () => {
         .then(
             (result) => {
                 console.log('SUCCESS!', result.text);
-                console.log(EMAILJS_PRIVATE_KEY)
-                console.log(EMAILJS_PUBLIC_KEY,)
                 form.current.reset();
                 alert("We'll get back to you shortly.");  
             },
@@ -33,8 +31,10 @@ const ContactForm = () => {
     
     return (
         <div className={styles.container}>
+            <h1>{EMAILJS_PRIVATE_KEY}</h1>
+            <h1>{EMAILJS_PUBLIC_KEY}</h1>
+            <h1>kat slater</h1>
             <form className={styles.form} ref={form} onSubmit={sendEmail}>
-
                     <div className={styles.formItem}>
                         <label className="inter-regular" htmlFor="firstname">
                             Name
