@@ -14,6 +14,12 @@ export default defineConfig({
   output: "server",
   image: {domains: ["cdn.sanity.io"]},
   site: 'https://www.cabin10.com',
+  server: {
+    headers: {
+// "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-eval' https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: https://maps.gstatic.com https://maps.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://emailjs.com; frame-src https://www.google.com https://maps.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' https://emailjs.com; frame-ancestors 'none'; block-all-mixed-content; upgrade-insecure-requests;",
+"Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+    }
+  },
   integrations: [
       mdx(), 
       sitemap(), 
