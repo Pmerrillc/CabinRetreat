@@ -22,6 +22,14 @@ const { data: blogPosts } = await loadQuery<BlogPost[]>({
   description="Discover the latest about Cabin 10, Strawberry and Pinecrest Lake."
 >
   <div class:list={[]}>
+    <div class:list={["max-content-width", "page-padding"]}>
+      <section>
+        <h2 class="cormorant-regular">Blog</h2>
+        <h6 class="inter-regular">
+          Discover the latest about Cabin 10, Strawberry and Pinecrest Lake.
+        </h6>
+      </section>
+    </div>
     <section>
       <BlogContainer blogPosts={blogPosts} />
     </section>

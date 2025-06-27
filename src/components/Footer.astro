@@ -7,7 +7,7 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
 
 <div class:list={["max-page-width", "main-container"]}>
   <div class:list={["page-padding", "max-content-width"]}>
-    <a href="/">
+    <a href="/" aria-label="cabin-10-full-logo">
       <Icon
         class:list={["margin-bottom"]}
         name="c10-full-logo-white"
@@ -54,7 +54,7 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
             </div>
             <div class:list={["logos-container"]}>
               <div class:list={["logo-container"]}>
-                <a href="/contact-us">
+                <a href="/contact-us" aria-label="phone-logo">
                   <Icon class:list={["contact-logo"]} name="phone" id="" /></a
                 >
                 <p class="eyebrow-text">Call Us Today</p>
@@ -63,11 +63,13 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
                 <a
                   class="eyebrow-text"
                   href="mailto: strawberrycabin10@gmail.com"
+                  aria-label="mail-logo"
                   ><Icon class:list={["contact-logo"]} name="mail" id="" />
                 </a>
                 <a
                   class="eyebrow-text"
                   href="mailto: strawberrycabin10@gmail.com"
+                  aria-label="mail"
                   >strawberrycabin10@gmail.com <span
                     class="block-bots"
                     aria-hidden="true">GO AWAY SPAM BOTS!</span
@@ -80,11 +82,13 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
                   href={FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="facebook-logo"
                   ><Icon class:list={["contact-logo"]} name="fb-icon" id="" />
                 </a>
                 <a
                   class="eyebrow-text"
                   href={FACEBOOK_URL}
+                  aria-label="facebook"
                   target="_blank"
                   rel="noopener noreferrer">Connect with us!</a
                 >

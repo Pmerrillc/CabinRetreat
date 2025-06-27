@@ -18,11 +18,11 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
 <div id="navbar" class:list={["max-page-width"]}>
   <div class:list={["content-container", "page-padding", "max-content-width"]}>
     <div class:list={["logos-container"]}>
-      <a href="/">
+      <a aria-label="cabin-10-logo" href="/">
         <slot name="white-logo" />
         <slot name="black-logo" />
       </a>
-      <button id="hamburger">
+      <button id="hamburger" aria-label="open-menu" name="open-menu">
         <Icon name=`${hamburgerColour}-hamburger` size={32} />
       </button>
     </div>
@@ -40,8 +40,9 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
         <li>
           <a href="/blog" class=`${textColor}`> Blog </a>
         </li>
-        <a class:list={[`${textColor}`, "button"]}>
+        <li>
           <LinkButton
+            class:list={[`${textColor}`, "button"]}
             hideOnDesktop={true}
             link={LODGIFY_URL}
             externalLink={true}
@@ -49,19 +50,20 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
           >
             Book Now
           </LinkButton>
-        </a>
-        <button id="close-button"> Close </button>
+        </li>
+        <li>
+          <button id="close-button"> Close </button>
+        </li>
       </ul>
-      <a class:list={["menu-item", "button"]}>
-        <LinkButton
-          hideOnMobile={true}
-          link={LODGIFY_URL}
-          externalLink={true}
-          buttonStyle={buttonColour}
-        >
-          Book Now
-        </LinkButton>
-      </a>
+      <LinkButton
+        class:list={["menu-item", "button"]}
+        hideOnMobile={true}
+        link={LODGIFY_URL}
+        externalLink={true}
+        buttonStyle={buttonColour}
+      >
+        Book Now
+      </LinkButton>
     </nav>
   </div>
 </div>
@@ -172,6 +174,7 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
 
     .button {
       align-self: flex-end;
+      font-size: 1rem;
     }
 
     .nav {

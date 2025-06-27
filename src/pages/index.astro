@@ -11,12 +11,15 @@ import Map from "../components/Map.astro";
 import CTASection from "../components/CTASection.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import NewHero from "../components/NewHero.astro";
 
 import BareLayout from "../layouts/BareLayout.astro";
 
 import NavBar from "../components/NavBar.astro";
 
 import heroImageLarge from "../images/hero-image-large.webp";
+import heroImageMedium from "../images/hero-image-medium.webp";
+import heroImageSmall from "../images/hero-image-small.webp";
 
 const data: HomePage["data"] = await sanityClient.fetch(
   `*[_type == "homepage"]{
@@ -51,7 +54,7 @@ const hero = data[0].hero;
   title="Cabin 10 | Cabin Rental in Strawberry CA"
   description="Home page for Cabin 10, a cabin rental property in Strawberry, California close to Pinecrest Lake"
 >
-  <div
+  <!-- <div
     style={`background-image: url("${heroImageLarge.src}");`}
     class:list={["navhero"]}
   >
@@ -67,7 +70,24 @@ const hero = data[0].hero;
     <section>
       <Hero hero={data[0].hero} />
     </section>
+  </div> -->
+  <div class:list={["navhero", "navhero-image"]}>
+    <section>
+      <NavBar ligthBackground={false}>
+        <Icon
+          slot="white-logo"
+          name="c10-normal-logo-white"
+          id="cabin10-logo"
+        />
+      </NavBar>
+    </section>
+    <section>
+      <Hero hero={data[0].hero} />
+    </section>
   </div>
+  <!-- <section>
+    <NewHero hero={data[0].hero} />
+  </section> -->
   <section>
     <ImageText buttonLink={"/about"} imageAndText={data[0].imageAndText}>
       <Checklist
@@ -112,6 +132,16 @@ const hero = data[0].hero;
     }
     @media only screen and (min-width: 789px) {
       font-size: 3em;
+    }
+  }
+
+  .navhero-image {
+    background-image: url("../images/hero-image-small.webp");
+    @media only screen and (min-width: 481px) {
+      background-image: url("../images/hero-image-medium.webp");
+    }
+    @media only screen and (min-width: 789px) {
+      background-image: url("../images/hero-image-large.webp");
     }
   }
 </style>

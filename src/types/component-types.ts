@@ -2,10 +2,11 @@ import { type ImageSet } from "./image-set";
 import type { ImageAsset } from "sanity";
 
 export interface Hero {
+  hero: {
         heading: string;
         subheading: string;
         backgroundImage: ImageSet;
-}
+}}
 
 export interface ImageText {
                 image: {

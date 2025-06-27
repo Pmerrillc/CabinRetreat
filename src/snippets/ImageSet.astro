@@ -1,5 +1,5 @@
 ---
-import { Picture, Image } from "astro:assets";
+import { Image } from "astro:assets";
 
 import type { ImageSet } from "../types/image-set";
 
@@ -11,8 +11,6 @@ const {
 } = Astro.props as {
   image: { asset: ImageAsset; alt: string };
 };
-
-const props = Astro.props;
 
 const largeImageUrl = urlFor(asset._id).width(900).url();
 const smallImageUrl = urlFor(asset._id).width(600).url();
