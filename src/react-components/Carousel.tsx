@@ -15,6 +15,7 @@ export const Carousel = (props: Props) => {
     const { images } = props
 
     return (
+        <>
         <div className="page-padding max-page-width max-content-width">
     <Swiper
       slidesPerView={1}
@@ -46,6 +47,7 @@ export const Carousel = (props: Props) => {
 
     </Swiper>
     </div>
+    </>
     )
   ;
 }

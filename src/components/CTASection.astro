@@ -6,31 +6,32 @@ import { LODGIFY_URL } from "../consts";
 <div class:list={["max-page-width"]}>
   <div
     class:list={[
-      "content-container",
       "page-padding-narrow",
       "content-padding-normal",
-      "max-content-width",
+      "content-container",
     ]}
   >
-    <p class:list={["eyebrow-text"]}>
-      A Private Retreat in an Area Full of Adventure
-    </p>
-    <h2 class:list={["cormorant-regular"]}>
-      Book your mountain adventure today
-    </h2>
-    <h6>
-      Relax in the vintage charm and comfort of this river view mountain retreat
-      minutes from Pinecrest lake and Dodge Ridge. A family friendly vacation
-      location with something for everyone.
-    </h6>
-    <div class="button-container">
-      <LinkButton
-        externalLink={true}
-        link={LODGIFY_URL}
-        buttonStyle="secondary"
-      >
-        <span> Book Today</span>
-      </LinkButton>
+    <div class:list={["content-container", "max-content-width"]}>
+      <p class:list={["eyebrow-text"]}>
+        A Private Retreat in an Area Full of Adventure
+      </p>
+      <h2 class:list={["cormorant-regular"]}>
+        Book your mountain adventure today
+      </h2>
+      <h6>
+        Relax in the vintage charm and comfort of this river view mountain
+        retreat minutes from Pinecrest lake and Dodge Ridge. A family friendly
+        vacation location with something for everyone.
+      </h6>
+      <div class="button-container">
+        <LinkButton
+          externalLink={true}
+          link={LODGIFY_URL}
+          buttonStyle="secondary"
+        >
+          <span> Book Today</span>
+        </LinkButton>
+      </div>
     </div>
   </div>
 </div>

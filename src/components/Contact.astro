@@ -18,46 +18,47 @@ const largeImage: string = urlFor(contactImage.asset._id).width(900).url();
 <div
   class:list={[
     "max-page-width",
-    "max-content-width",
     "page-padding",
     "outer-container",
     "content-padding-normal",
   ]}
 >
-  <div class="header-container">
-    <h3 class="cormorant-regular">Get in touch with us</h3>
-    <h6 class="inter-regular">
-      {
-        `Any questions you would like answered about the cabin? Please send us a
+  <div class:list={["max-content-width", "outer-container"]}>
+    <div class="header-container">
+      <h3 class="cormorant-regular">Get in touch with us</h3>
+      <h6 class="inter-regular">
+        {
+          `Any questions you would like answered about the cabin? Please send us a
       message.`
-      }
-    </h6>
-  </div>
-  <div class:list={["content-container"]}>
-    <div class:list={["input-container"]}>
-      <div class="form-container">
-        <ContactForm client:load />
-      </div>
+        }
+      </h6>
     </div>
-    <div class:list={["image-container"]}>
-      <div class="contact-info">
-        <div>
-          <p>Phone Number</p>
-          <p class="inter-light">408-858-5495</p>
-        </div>
-        <div class="contact-item">
-          <p>Email</p>
-          <p class="inter-light">strawberrycabin10@gmail.com</p>
+    <div class:list={["content-container"]}>
+      <div class:list={["input-container"]}>
+        <div class="form-container">
+          <ContactForm client:load />
         </div>
       </div>
-      <Image
-        src={largeImage}
-        srcset={`${smallImage} 500w, ${largeImage} 900w`}
-        sizes={"(max-width: 789px) 400px, 900px"}
-        alt={""}
-        inferSize={true}
-        class={"image"}
-      />
+      <div class:list={["image-container"]}>
+        <div class="contact-info">
+          <div>
+            <p>Phone Number</p>
+            <p class="inter-light">408-858-5495</p>
+          </div>
+          <div class="contact-item">
+            <p>Email</p>
+            <p class="inter-light">strawberrycabin10@gmail.com</p>
+          </div>
+        </div>
+        <Image
+          src={largeImage}
+          srcset={`${smallImage} 500w, ${largeImage} 900w`}
+          sizes={"(max-width: 789px) 400px, 900px"}
+          alt={""}
+          inferSize={true}
+          class={"image"}
+        />
+      </div>
     </div>
   </div>
 </div>
