@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
 
-import { LODGIFY_URL } from "../consts";
+import { AIRBNB_URL, LODGIFY_URL } from "../consts";
 
 interface Props {
   ligthBackground: boolean;
@@ -12,7 +12,8 @@ const { ligthBackground } = Astro.props;
 
 const textColor = ligthBackground ? "menu-item-black" : "menu-item-white";
 const hamburgerColour = ligthBackground ? "black" : "white";
-const buttonColour = ligthBackground ? "secondary" : "primary";
+const primaryButtonColour = ligthBackground ? "secondary" : "primary";
+const secondaryButtonColour = ligthBackground ? "secondary" : "special";
 ---
 
 <div id="navbar" class:list={["max-page-width"]}>
@@ -52,18 +53,44 @@ const buttonColour = ligthBackground ? "secondary" : "primary";
           </LinkButton>
         </li>
         <li>
+          <LinkButton
+            class:list={[`${textColor}`, "button"]}
+            hideOnDesktop={true}
+            link={AIRBNB_URL}
+            externalLink={true}
+            buttonStyle="secondary"
+          >
+            Book With Airbnb
+          </LinkButton>
+        </li>
+        <li>
           <button id="close-button"> Close </button>
         </li>
       </ul>
-      <LinkButton
-        class:list={["menu-item", "button"]}
-        hideOnMobile={true}
-        link={LODGIFY_URL}
-        externalLink={true}
-        buttonStyle={buttonColour}
-      >
-        Book Now
-      </LinkButton>
+      <ul class:list={["menu"]}>
+        <li>
+          <LinkButton
+            class:list={["menu-item", "button"]}
+            hideOnMobile={true}
+            link={AIRBNB_URL}
+            externalLink={true}
+            buttonStyle={secondaryButtonColour}
+          >
+            Book With Airbnb
+          </LinkButton>
+        </li>
+        <li>
+          <LinkButton
+            class:list={["menu-item", "button"]}
+            hideOnMobile={true}
+            link={LODGIFY_URL}
+            externalLink={true}
+            buttonStyle={primaryButtonColour}
+          >
+            Book Now
+          </LinkButton>
+        </li>
+      </ul>
     </nav>
   </div>
 </div>

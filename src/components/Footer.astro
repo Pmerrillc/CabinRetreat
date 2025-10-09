@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
 
-import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
+import { LODGIFY_URL, FACEBOOK_URL, AIRBNB_URL } from "../consts";
 ---
 
 <div class:list={["max-page-width", "main-container"]}>
@@ -37,7 +37,7 @@ import { LODGIFY_URL, FACEBOOK_URL } from "../consts";
             <p>Booking With Airbnb?</p>
 
             <LinkButton
-              link="https://www.airbnb.com/slink/4wW5PCQ4"
+              link={AIRBNB_URL}
               buttonStyle="primary"
               externalLink={true}
             >
